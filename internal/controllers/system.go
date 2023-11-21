@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
+	"github.com/starjun/jobrunner"
 	"net/http/pprof"
 	"strings"
 	"toes/global"
@@ -107,4 +108,33 @@ func (self *systemCtrl) Ws(c *gin.Context) {
 		Meta:    nil,
 	})
 
+}
+
+func (self *systemCtrl) JobList(c *gin.Context) {
+
+	//core.WriteResponse(c, nil, nil)
+	c.JSON(200, request.Response{
+		Code:    "0",
+		Message: "JobList success",
+		Data:    jobrunner.StatusJson(),
+		Meta:    nil,
+	})
+}
+
+func (self *systemCtrl) JobDo(c *gin.Context) {
+	//jobid := c.Param("jobid")
+	//
+	//ents := jobrunner.MainCron.Entries()
+	//
+	//for _, v := range ents {
+	//
+	//}
+
+	//core.WriteResponse(c, nil, nil)
+	c.JSON(200, request.Response{
+		Code:    "0",
+		Message: "JobList Ws success",
+		Data:    jobrunner.StatusJson(),
+		Meta:    nil,
+	})
 }

@@ -38,6 +38,9 @@ func InstallRouters(g *gin.Engine) error {
 	sysV1.GET("/debug/pprof/", controllers.SystemCtrl.Pprof)
 	sysV1.GET("/debug/pprof/:app([\\w]+)", controllers.SystemCtrl.Pprof)
 	sysV1.GET("/router/list", controllers.SystemCtrl.RouterList)
+	// jobrunner
+	sysV1.GET("/jobrunner/list", controllers.SystemCtrl.JobList)
+	sysV1.GET("/jobrunner/:jobid", controllers.SystemCtrl.JobDo)
 	//获取系统信息，用第三方库
 	sysV1.GET("/info", controllers.SystemCtrl.SysInfo)
 	//sysV1.GET("/version", sysController.Version)
