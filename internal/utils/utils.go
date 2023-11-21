@@ -125,22 +125,28 @@ func DecryptString(encryptedData, _aeskey string) string {
 	return string(originData)
 }
 
-func DecryptInternalValue(encryptedData, tp, key string) string {
-	encrypted, _ := base64.StdEncoding.DecodeString(encryptedData)
-	diykey := ""
-	if tp == "mysql" {
-		diykey = Md5Sum(key + "1" + tp)
-	} else if tp == "redis" {
-		diykey = Md5Sum(key + "2" + tp)
-	} else if tp == "jwt" {
-		diykey = Md5Sum(key + "3" + tp)
+func GetRealKey(_key, _tp string) string {
+	_bk, _ := base64.StdEncoding.DecodeString(_key)
+	_sbk := string(_bk)
+	if _tp == "mysql" {
+		return Md5Sum(_sbk + "1" + _tp)
+	} else if _tp == "redis" {
+		return Md5Sum(_sbk + "2" + _tp)
+	} else if _tp == "jwt" {
+		return Md5Sum(_sbk + "3" + _tp)
+	} else if _tp == "CheckHeaderReq" {
+		return Md5Sum(_sbk + "4" + _tp)
 	} else {
-		diykey = key
+		return _sbk
 	}
-	originData, err := AesDecrypt(encrypted, []byte(diykey))
-	if err != nil {
-		log.Println("aes decrypt", "err", err.Error(), "encryptedData", encryptedData)
-		return ""
-	}
-	return string(originData)
+}
+
+func EncryptInternalValue(_key, _value, _tp string) string {
+	diykey := GetRealKey(_key, _tp)
+	return EncryptString(_value, diykey)
+}
+
+func DecryptInternalValue(_key, _value, _tp string) string {
+	diykey := GetRealKey(_key, _tp)
+	return DecryptString(_value, diykey)
 }

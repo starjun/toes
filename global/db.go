@@ -2,9 +2,11 @@ package global
 
 import (
 	"fmt"
+	"github.com/spf13/cobra"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	mysqllogger "gorm.io/gorm/logger"
+	"strings"
 	"toes/internal/utils"
 )
 
@@ -15,8 +17,8 @@ var (
 // InitStore 读取 db 配置，创建 gorm.DB 实例，并初始化 store 层.
 func InitStore() error {
 	// DecryptString
-	if Cfg.Mysql.PasswordMode == "AES" {
-		Cfg.Mysql.Password = utils.DecryptInternalValue(Cfg.Mysql.Password, Cfg.Seckey.Basekey, "mysql")
+	if strings.ToUpper(Cfg.Mysql.PasswordMode) == "AES" {
+		Cfg.Mysql.Password = utils.DecryptInternalValue(Cfg.Seckey.Basekey, Cfg.Mysql.Password, "mysql")
 	}
 
 	// Get password mod
@@ -32,7 +34,7 @@ func InitStore() error {
 	DB, err = newMySQL(&Cfg.Mysql)
 	if err != nil {
 		LogErrorw("mysql连接失败", "Subject", "mysql", "Result", err)
-		return err
+		cobra.CheckErr(err)
 	}
 
 	LogDebugw("init db success")
@@ -58,9 +60,9 @@ func newMySQL(opts *Mysql) (*gorm.DB, error) {
 		logLevel = mysqllogger.LogLevel(opts.LogLevel)
 	}
 	db, err := gorm.Open(mysql.Open(opts.DSN()), &gorm.Config{
-		Logger:                 mysqllogger.Default.LogMode(logLevel),
-		SkipDefaultTransaction: true,
-		PrepareStmt:            true,
+		Logger: mysqllogger.Default.LogMode(logLevel),
+		//SkipDefaultTransaction: true,
+		//PrepareStmt:            true,
 	})
 	if err != nil {
 		return nil, err

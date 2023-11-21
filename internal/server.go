@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"github.com/gin-gonic/gin"
+	"github.com/starjun/jobrunner"
 	"log"
 	"net/http"
 	"os"
@@ -14,6 +15,7 @@ import (
 	"toes/internal/middleware"
 	"toes/internal/routers"
 	"toes/internal/ws"
+	"toes/jobs"
 )
 
 // startInsecureServer 创建并运行 HTTP 服务器.
@@ -61,6 +63,11 @@ func startSecureServer(g *gin.Engine) *http.Server {
 	return httpsSrv
 }
 
+func InitJob() {
+	jobrunner.Start() // optional: jobrunner.Start(pool int, concurrent int) (10, 1)
+	jobrunner.Schedule("@every 10s", jobs.Job01{Test: "xxxxx1"}, "xxxxx")
+}
+
 func Run() error {
 	// 初始化 localcache 层
 	global.InitLocalCache()
@@ -68,6 +75,12 @@ func Run() error {
 	// 初始化 redis
 	// 初始化失败自动退出
 	//global.InitRedis()
+
+	// 初始化数据库
+	global.InitStore()
+
+	//InitJob
+	InitJob()
 
 	//启动websocket服务
 	ws.StartWS()
