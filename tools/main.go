@@ -13,14 +13,19 @@ func main() {
 	fmt.Println("seckey:basekey is", bk, " 加密后：", b64bk) // 暂时就直接 base64 了
 
 	// 加密 mysql
-	mysqlpsd := "123456"
+	mysqlpsd := "jMy30OC*IFwnDL(JgL"
 	aesmysqlpsd := utils.EncryptInternalValue(b64bk, mysqlpsd, "mysql")
 	fmt.Println("mysql 加密后: ", aesmysqlpsd)
 
 	// 加密 redis
-	redispsd := "123456"
+	redispsd := "passzj123"
 	aesredispsd := utils.EncryptInternalValue(b64bk, redispsd, "redis")
 	fmt.Println("redis 加密后: ", aesredispsd)
+
+	// 加密 jwt
+	jwtpsd := "myheaderxxxx"
+	aesjwtpsd := utils.EncryptInternalValue(b64bk, jwtpsd, "jwt")
+	fmt.Println("jwt 加密后: ", aesjwtpsd)
 
 	//	解密/生成密码
 	_bk, _ := base64.StdEncoding.DecodeString(b64bk)
@@ -34,10 +39,12 @@ func main() {
 	_redispsd := utils.DecryptInternalValue(b64bk, aesredispsd, "redis")
 	fmt.Println("redis 解密后: ", _redispsd)
 
-	// jwt 使用的 key
-	fmt.Println("jwtkey 解密后:(计算) ", utils.GetRealKey(b64bk, "jwt"))
+	// jwt 解密
+	_jwtpsd := utils.GetRealKey(bk, "jwt")
+	fmt.Println("jwt 解密后（计算）: ", _jwtpsd)
 
 	// 防重放使用的 key
-	fmt.Println("防重放使用的 解密后:(计算) ", utils.GetRealKey(b64bk, "CheckHeaderReq"))
+	_ntd := utils.GetRealKey(bk, "CheckHeaderReq")
+	fmt.Println("防重放使用的 解密后（计算）: ", _ntd)
 
 }

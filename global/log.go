@@ -157,7 +157,7 @@ func LogFatalw(msg string, keysAndValues ...interface{}) {
 func LogGin(ctx context.Context) *zap.Logger {
 
 	_logger := logger.With(zap.Any("WEB", "GIN"))
-	if requestID := ctx.Value("Traceid"); requestID != nil {
+	if requestID := ctx.Value(Cfg.Header.Requestid); requestID != nil {
 		_logger = _logger.With(zap.Any("Traceid", requestID))
 	}
 	return _logger

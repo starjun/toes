@@ -3,13 +3,11 @@ package jobs
 import "log"
 
 type Job01 struct {
-	// filtered
 	Test string
+	Cnt  int
 }
 
-// ReminderEmails.Run() will get triggered automatically.
-func (e Job01) Run() {
-	// Queries the DB
-	// Sends some email
-	log.Println("Every 10 sec send reminder emails \n", e.Test)
+func (g *Job01) Run() {
+	log.Println("Hello, ", g.Test, g.Cnt)
+	g.Cnt++
 }

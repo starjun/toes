@@ -10,8 +10,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"reflect"
 	"runtime"
 )
+
+func IsZero(v interface{}) bool {
+	return reflect.DeepEqual(v, reflect.Zero(reflect.TypeOf(v)).Interface())
+}
 
 func GetFileAndLine(v ...int) (string, int) {
 	skip := 1
@@ -135,18 +140,18 @@ func GetRealKey(_key, _tp string) string {
 	} else if _tp == "jwt" {
 		return Md5Sum(_sbk + "3" + _tp)
 	} else if _tp == "CheckHeaderReq" {
-		return Md5Sum(_sbk + "4" + _tp)
+		return Md5Sum(_sbk + "CheckHeaderReq")
 	} else {
 		return _sbk
 	}
 }
 
 func EncryptInternalValue(_key, _value, _tp string) string {
-	diykey := GetRealKey(_key, _tp)
+	diykey := GetRealKey(string(_key), _tp)
 	return EncryptString(_value, diykey)
 }
 
 func DecryptInternalValue(_key, _value, _tp string) string {
-	diykey := GetRealKey(_key, _tp)
+	diykey := GetRealKey(string(_key), _tp)
 	return DecryptString(_value, diykey)
 }

@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	"github.com/starjun/jobrunner"
@@ -110,31 +111,38 @@ func (self *systemCtrl) Ws(c *gin.Context) {
 
 }
 
-func (self *systemCtrl) JobList(c *gin.Context) {
+// jobrunner
+func (self *systemCtrl) JobDo(c *gin.Context) {
+	JobId := c.Param("jobid")
+	ents := jobrunner.MainCron.Entries()
+	isExist := "false"
+	for _, v := range ents {
+		str_id := fmt.Sprintf("%v", v.ID)
+		if str_id == JobId {
+			isExist = "true"
+			//log.Println(k, " Job.Run() From api")
+			//log.Println(v.ID, " ", str_id)
+			jobrunner.Now(v.Job)
+			break
+		}
+	}
 
-	//core.WriteResponse(c, nil, nil)
 	c.JSON(200, request.Response{
 		Code:    "0",
-		Message: "JobList success",
-		Data:    jobrunner.StatusJson(),
+		Message: "jobid isExist " + isExist,
+		Data:    nil,
 		Meta:    nil,
 	})
+
 }
 
-func (self *systemCtrl) JobDo(c *gin.Context) {
-	//jobid := c.Param("jobid")
-	//
-	//ents := jobrunner.MainCron.Entries()
-	//
-	//for _, v := range ents {
-	//
-	//}
+func (self *systemCtrl) JobList(c *gin.Context) {
 
-	//core.WriteResponse(c, nil, nil)
 	c.JSON(200, request.Response{
 		Code:    "0",
-		Message: "JobList Ws success",
+		Message: "jobid List success ",
 		Data:    jobrunner.StatusJson(),
 		Meta:    nil,
 	})
+
 }

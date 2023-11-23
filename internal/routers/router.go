@@ -28,19 +28,23 @@ func InstallRouters(g *gin.Engine) error {
 	}
 
 	accountV1 := v1.Group("account")
-	//accountV1.PUT(":name", accountController.Update)        // 更新
-	accountV1.POST("", controllers.AccountCtrl.Create)            // 创建
-	accountV1.DELETE(":username", controllers.AccountCtrl.Delete) // 删除
-	//accountV1.GET(":name", accountController.Get)           // 获取用户详情
-	//accountV1.POST("/list", accountController.List)         // 列表
+
+	accountV1.POST("", controllers.AccountCtrl.Create)                         // 创建
+	accountV1.PUT("/username/:username", controllers.AccountCtrl.Update)       // 更新
+	accountV1.PUT("/usernameExt/:username", controllers.AccountCtrl.UpdateExt) // 更新
+	accountV1.DELETE("/username/:username", controllers.AccountCtrl.Delete)    // 删除
+	accountV1.GET("/username/:username", controllers.AccountCtrl.Get)          // 获取用户详情
+	accountV1.POST("/list", controllers.AccountCtrl.List)                      // 列表
+	accountV1.POST("/listExt", controllers.AccountCtrl.ListExt)
 
 	sysV1 := v1.Group("sys")
 	sysV1.GET("/debug/pprof/", controllers.SystemCtrl.Pprof)
 	sysV1.GET("/debug/pprof/:app([\\w]+)", controllers.SystemCtrl.Pprof)
+	// jobrunner 相关
+	sysV1.GET("/jobnner/list/", controllers.SystemCtrl.JobList)
+	sysV1.POST("/jobnner/:jobid", controllers.SystemCtrl.JobDo)
+	// 获取路由信息
 	sysV1.GET("/router/list", controllers.SystemCtrl.RouterList)
-	// jobrunner
-	sysV1.GET("/jobrunner/list", controllers.SystemCtrl.JobList)
-	sysV1.GET("/jobrunner/:jobid", controllers.SystemCtrl.JobDo)
 	//获取系统信息，用第三方库
 	sysV1.GET("/info", controllers.SystemCtrl.SysInfo)
 	//sysV1.GET("/version", sysController.Version)

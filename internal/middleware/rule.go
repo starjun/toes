@@ -5,6 +5,7 @@ import (
 	"github.com/starjun/gotools"
 	"net/http"
 	"strings"
+	"toes/internal/request"
 	"toes/internal/utils"
 )
 
@@ -32,20 +33,20 @@ type GotoolsRule struct {
 	MaValue    string   // malocation是header args post时 校验header名
 }
 
-//func CheckPermission() gin.HandlerFunc {
-//	return func(c *gin.Context) {
-//		var rules []GotoolsRule
-//		utils.JsonDecode(TestRules, &rules)
-//		if !CheckRule(c, c.Request, rules) {
-//			core.WriteResponse(c, errno.ErrNotPermission, nil)
-//			c.Abort()
-//
-//			return
-//		}
-//
-//		c.Next()
-//	}
-//}
+func CheckPermission() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		var rules []GotoolsRule
+		utils.JsonDecode(TestRules, &rules)
+		if !CheckRule(c, c.Request, rules) {
+			request.WriteResponseErr(c, "1000", nil, "CheckRule error")
+			c.Abort()
+
+			return
+		}
+
+		c.Next()
+	}
+}
 
 func CheckRule(c *gin.Context, _req *http.Request, listCu []GotoolsRule) bool {
 	mapstr := make(map[string]string)

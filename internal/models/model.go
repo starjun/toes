@@ -13,14 +13,14 @@ import (
 )
 
 type Base struct {
-	ID        int64      `gorm:"column:id;primarykey" json:"id"`
+	ID        int64      `gorm:"column:id;primarykey;auto_increment" json:"id"`
 	CreatedAt *time.Time `gorm:"column:created_at;type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" json:"createdAt"`
 	UpdatedAt *time.Time `gorm:"column:updated_at;type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
 	DeletedAt *time.Time `gorm:"column:deleted_at;type:DATETIME NULL" json:"deletedAt"`
 }
 
 type Model struct {
-	ID        int64           `gorm:"column:id;primarykey" json:"id"`
+	ID        int64           `gorm:"column:id;primarykey;auto_increment" json:"id"`
 	CreatedAt *time.Time      `gorm:"column:created_at;type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" json:"createdAt"`
 	UpdatedAt *time.Time      `gorm:"column:updated_at;type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
 	DeletedAt *gorm.DeletedAt `gorm:"column:deleted_at;type:DATETIME NULL" json:"deletedAt"`

@@ -27,12 +27,11 @@ func RealIp() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// Check for incoming header, use it if exists
 		rip := c.GetHeader(global.Cfg.Header.Realip)
-
 		if rip == "" {
-			rip = c.Request.RemoteAddr
-			c.Set(global.Cfg.Header.Realip, rip)
+			//rip = c.Request.RemoteAddr
+			rip = c.ClientIP()
 		}
-
+		c.Set(global.Cfg.Header.Realip, rip)
 		c.Next()
 	}
 }

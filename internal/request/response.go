@@ -1,6 +1,8 @@
 package request
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 var (
 	RespErrdata = map[string]string{
@@ -14,11 +16,6 @@ var (
 	}
 )
 
-type ListOBJResponse struct {
-	TotalCount int64         `json:"totalCount"`
-	Objs       []interface{} `json:"data"`
-}
-
 type Response struct {
 	// Code defines the business code.
 	Code string `json:"code"`
@@ -30,6 +27,11 @@ type Response struct {
 	Data interface{} `json:"data"`
 
 	Meta interface{} `json:"meta"`
+}
+
+type ListObjResponse struct {
+	TotalCount int64         `json:"totalCount"`
+	List       []interface{} `json:"data"`
 }
 
 func WriteResponseErr(c *gin.Context, code string, data interface{}, msgExt string) {
@@ -56,7 +58,7 @@ func WriteResponseOk(c *gin.Context, code string, data interface{}, msgExt strin
 	})
 }
 
-func WriteResponseList(c *gin.Context, code string, obj ListOBJResponse, meta interface{}) {
+func WriteResponseList(c *gin.Context, code string, obj interface{}, meta interface{}) {
 	if code == "" {
 		code = "0"
 	}

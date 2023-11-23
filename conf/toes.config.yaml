@@ -7,9 +7,9 @@ server:
 
 # MySQL
 mysql:
-  host: 127.0.0.1 # MySQL 机器 ip 和端口，默认 127.0.0.1:3306
+  host: rm-uf65u18gj63n1eqplko.mysql.rds.aliyuncs.com # MySQL 机器 ip 和端口，默认 127.0.0.1:3306
   username: root # MySQL 用户名(建议授权最小权限集)
-  password: /2VmNCQFSRfWCXWDmVZlYg== # MySQL 用户密码
+  password: 5SsmywjqCYjo8gDcKsfRCOKY07jTS8ov1dQl8a9Lz6M= # MySQL 用户密码
   database: xingzhi # 系统所用的数据库名
   maxIdleConnections: 100 # MySQL 最大空闲连接数，默认 100
   maxOpenConnections: 100 # MySQL 最大打开的连接数，默认 100
@@ -21,7 +21,7 @@ mysql:
 redis:
   host: 127.0.0.1:6379 # redis 地址，默认 127.0.0.1:6379
   username: # 用户名
-  password: XzgJRcZ/ljRZKuTNaqA3Og== # redis 密码
+  password: 3k7BqcQV3O+JTbnaybg+TA== # redis 密码
 
 
 log:

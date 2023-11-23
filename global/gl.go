@@ -13,6 +13,7 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"toes/internal/utils"
 )
 
 const (
@@ -99,7 +100,7 @@ func InitRedis() {
 
 	RedisClient = redis.NewClient(&redis.Options{
 		Addr:     Cfg.Redis.Host,
-		Password: Cfg.Redis.Password,
+		Password: utils.DecryptInternalValue(Cfg.Seckey.Basekey, Cfg.Redis.Password, "redis"),
 		Username: Cfg.Redis.Username,
 	})
 

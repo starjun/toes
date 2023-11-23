@@ -18,6 +18,11 @@ import (
 	"toes/jobs"
 )
 
+func InitJob() {
+	jobrunner.Start() // optional: jobrunner.Start(pool int, concurrent int) (10, 1)
+	jobrunner.Schedule("@every 10s", &jobs.Job01{Test: "xxxxx1"}, "xxxxx")
+}
+
 // startInsecureServer 创建并运行 HTTP 服务器.
 func startInsecureServer(g *gin.Engine) *http.Server {
 	// 创建 HTTP Server 实例
@@ -63,11 +68,6 @@ func startSecureServer(g *gin.Engine) *http.Server {
 	return httpsSrv
 }
 
-func InitJob() {
-	jobrunner.Start() // optional: jobrunner.Start(pool int, concurrent int) (10, 1)
-	jobrunner.Schedule("@every 10s", jobs.Job01{Test: "xxxxx1"}, "xxxxx")
-}
-
 func Run() error {
 	// 初始化 localcache 层
 	global.InitLocalCache()
@@ -77,9 +77,9 @@ func Run() error {
 	//global.InitRedis()
 
 	// 初始化数据库
-	global.InitStore()
+	//global.InitStore()
 
-	//InitJob
+	// 初始化 jobrunner
 	InitJob()
 
 	//启动websocket服务
@@ -93,13 +93,13 @@ func Run() error {
 
 	// gin.Recovery() 中间件，用来捕获任何 panic，并恢复
 	mws := []gin.HandlerFunc{
-		middleware.Logger(),
+		middleware.RequestID(),
+		middleware.RealIp(),
 		gin.Recovery(),
 		middleware.NoCache,
 		middleware.Cors,
 		middleware.Secure,
-		middleware.RequestID(),
-		middleware.RealIp(),
+		middleware.Logger(),
 	}
 
 	g.Use(mws...)
