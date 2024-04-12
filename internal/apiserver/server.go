@@ -17,12 +17,12 @@ import (
 	"toes/internal/apiserver/http/middleware"
 	"toes/internal/apiserver/router"
 	"toes/internal/apiserver/ws"
-	"toes/jobs"
+	"toes/internal/job"
 )
 
 func InitJob() {
 	jobrunner.Start() // optional: jobrunner.Start(pool int, concurrent int) (10, 1)
-	jobrunner.Schedule("@every 10s", &jobs.Job01{Test: "xxxxx1"}, "xxxxx")
+	jobrunner.Schedule("@every 10s", &job.Job01{Test: "xxxxx1"}, "xxxxx")
 }
 
 // startInsecureServer 创建并运行 HTTP 服务器.
