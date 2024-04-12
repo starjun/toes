@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"time"
+
 	"toes/global"
 
 	"github.com/gin-gonic/gin"
@@ -22,7 +23,7 @@ func Logger() gin.HandlerFunc {
 			"method", c.Request.Method,
 			"path", path,
 			"query", query,
-			//"ip", c.ClientIP(),
+			// "ip", c.ClientIP(),
 			"ip", _ip,
 			"cost", cost,
 			"errors", c.Errors.ByType(gin.ErrorTypePrivate).String(),

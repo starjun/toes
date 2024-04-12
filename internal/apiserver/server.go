@@ -1,20 +1,22 @@
-package internal
+package apiserver
 
 import (
 	"context"
 	"errors"
-	"github.com/gin-gonic/gin"
-	"github.com/starjun/jobrunner"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/starjun/jobrunner"
+
 	"toes/global"
-	"toes/internal/middleware"
-	"toes/internal/routers"
-	"toes/internal/ws"
+	"toes/internal/apiserver/http/middleware"
+	"toes/internal/apiserver/router"
+	"toes/internal/apiserver/ws"
 	"toes/jobs"
 )
 
@@ -26,7 +28,7 @@ func InitJob() {
 // startInsecureServer 创建并运行 HTTP 服务器.
 func startInsecureServer(g *gin.Engine) *http.Server {
 	// 创建 HTTP Server 实例
-	//httpSrv := &http.Server{Addr: viper.GetString("server.addr"), Handler: g}
+	// httpSrv := &http.Server{Addr: viper.GetString("server.addr"), Handler: g}
 	httpSrv := &http.Server{Addr: global.Cfg.Server.Addr, Handler: g}
 
 	// 运行 HTTP 服务器。在 goroutine 中启动服务器，它不会阻止下面的正常关闭处理流程
@@ -47,7 +49,7 @@ func startInsecureServer(g *gin.Engine) *http.Server {
 // nolint:unused
 func startSecureServer(g *gin.Engine) *http.Server {
 	// 创建 HTTPS Server 实例
-	//httpsSrv := &http.Server{Addr: viper.GetString("tls.addr"), Handler: g}
+	// httpsSrv := &http.Server{Addr: viper.GetString("tls.addr"), Handler: g}
 	httpsSrv := &http.Server{Addr: global.Cfg.Tls.Addr, Handler: g}
 
 	// 运行 HTTPS 服务器。在 goroutine 中启动服务器，它不会阻止下面的正常关闭处理流程
@@ -55,7 +57,8 @@ func startSecureServer(g *gin.Engine) *http.Server {
 	global.LogInfow("Start to listening the incoming requests on https address",
 		"addr",
 		global.Cfg.Tls.Addr)
-	//cert, key := viper.GetString("tls.cert"), viper.GetString("tls.key")
+
+	// cert, key := viper.GetString("tls.cert"), viper.GetString("tls.key")
 	cert, key := global.Cfg.Tls.Cert, global.Cfg.Tls.Key
 	if cert != "" && key != "" {
 		go func() {
@@ -74,15 +77,15 @@ func Run() error {
 
 	// 初始化 redis
 	// 初始化失败自动退出
-	//global.InitRedis()
+	// global.InitRedis()
 
 	// 初始化数据库
-	//global.InitStore()
+	// global.InitStore()
 
 	// 初始化 jobrunner
 	InitJob()
 
-	//启动websocket服务
+	// 启动websocket服务
 	ws.StartWS()
 
 	// 设置 Gin 模式
@@ -104,7 +107,7 @@ func Run() error {
 
 	g.Use(mws...)
 
-	if err := routers.InstallRouters(g); err != nil {
+	if err := router.InstallRouters(g); err != nil {
 		return err
 	}
 
@@ -145,47 +148,3 @@ func Run() error {
 
 	return nil
 }
-
-//func Runendless() error {
-//	// 初始化 localcache 层
-//	global.InitLocalCache()
-//
-//	// 初始化 redis
-//	// 初始化失败自动退出
-//	//global.InitRedis()
-//
-//	//启动websocket服务
-//	ws.StartWS()
-//
-//	// 设置 Gin 模式
-//	gin.SetMode(global.Cfg.Server.Mode)
-//
-//	// 创建 Gin 引擎
-//	g := gin.New()
-//
-//	// gin.Recovery() 中间件，用来捕获任何 panic，并恢复
-//	mws := []gin.HandlerFunc{middleware.Logger(),
-//		gin.Recovery(),
-//		middleware.NoCache,
-//		middleware.Cors,
-//		middleware.Secure,
-//		middleware.RequestID(),
-//	}
-//
-//	g.Use(mws...)
-//
-//	if err := routers.InstallRouters(g); err != nil {
-//		return err
-//	}
-//
-//	//endless linux/freebsd/darwin
-//	s := endless.NewServer(global.Cfg.Server.Addr, g)
-//	s.ReadHeaderTimeout = 20 * time.Second
-//	s.WriteTimeout = 20 * time.Second
-//	s.MaxHeaderBytes = 1 << 20
-//	s.ListenAndServe()
-//
-//	global.LogInfow("Server exiting")
-//
-//	return nil
-//}

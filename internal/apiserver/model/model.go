@@ -1,13 +1,14 @@
-package models
+package model
 
 import (
 	"errors"
-	"gorm.io/gorm/utils"
 	"log"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
+
+	"gorm.io/gorm/utils"
 
 	"gorm.io/gorm"
 )
@@ -75,7 +76,7 @@ func (p *QueryConfigRequest) MakeGormDbByQueryConfig(gormDB *gorm.DB) {
 		gormDB.Where(sql)
 	}
 	if p.Deleted != 2 {
-		//gormDB.Statement.Unscoped
+		// gormDB.Statement.Unscoped
 		gormDB.Where("deleted_at IS NULL")
 	}
 	order := p.Order

@@ -2,17 +2,19 @@ package global
 
 import (
 	"context"
-	"github.com/fsnotify/fsnotify"
-	"github.com/go-redis/redis/v8"
-	"github.com/patrickmn/go-cache"
-	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
 	"log"
 	"os"
 	"path/filepath"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/fsnotify/fsnotify"
+	"github.com/go-redis/redis/v8"
+	"github.com/patrickmn/go-cache"
+	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+
 	"toes/internal/utils"
 )
 
@@ -32,7 +34,7 @@ var (
 
 var (
 	mu          sync.Mutex
-	defaultName = RecommendedName + ".config.yaml"
+	defaultName = "apiserver.yaml"
 
 	// RecommendedEnvPrefix defines the ENV prefix used by all service.
 	RecommendedEnvPrefix = strings.ToUpper(RecommendedName)
@@ -52,7 +54,8 @@ func initConfig(cfgpath string) {
 		cobra.CheckErr(err)
 
 		// Add `$HOME/<RecommendedHomeDir>` & `.`
-		viper.AddConfigPath(filepath.Join(home, "conf"))
+		viper.AddConfigPath(filepath.Join("/etc", RecommendedName))
+		viper.AddConfigPath(filepath.Join(home, "."+RecommendedName))
 		viper.AddConfigPath(".")
 		viper.AddConfigPath(filepath.Join(".", "conf"))
 
@@ -93,7 +96,7 @@ func initConfig(cfgpath string) {
 
 func InitLocalCache() {
 	Cache = cache.New(5*time.Minute, 10*time.Minute)
-	//Cache.Set("foo", "bar", cache.DefaultExpiration)
+	// Cache.Set("foo", "bar", cache.DefaultExpiration)
 }
 
 func InitRedis() {

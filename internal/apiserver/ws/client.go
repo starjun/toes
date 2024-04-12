@@ -7,11 +7,13 @@ package ws
 import (
 	"bytes"
 	"fmt"
-	"github.com/gorilla/websocket"
 	"log"
 	"strings"
 	"time"
-	"toes/internal/sysinfo"
+
+	"github.com/gorilla/websocket"
+
+	"toes/internal/apiserver/sysinfo"
 	"toes/internal/utils"
 )
 
@@ -68,7 +70,7 @@ func (c *Client) readPump() {
 		}
 		message = bytes.TrimSpace(bytes.Replace(message, newline, space, -1))
 		go c.handleMessage(string(message))
-		//c.hub.broadcast <- message
+		// c.hub.broadcast <- message
 	}
 }
 

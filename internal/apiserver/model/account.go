@@ -1,17 +1,18 @@
-package models
+package model
 
 import (
 	"context"
 	"errors"
+
 	"gorm.io/gorm"
+
 	"toes/global"
 )
 
 const TableNameAccount = "user"
 
-// AccountM mapped from table <account>.
 type Account struct {
-	//gorm.Model
+	// gorm.Model
 	Model
 	Username string `gorm:"column:username;type:varchar(100);not null;unique_index" json:"username"` // 用户名
 	Password string `gorm:"column:password;type:varchar(100)" json:"password"`                       // 密码
@@ -134,7 +135,7 @@ func AccountUpdate(ctx context.Context, s Account) error {
 // 仅更新部分字段 如果动态实现？？？
 func AccountUpdateExt(ctx context.Context, s Account, args ...interface{}) error {
 	return global.DB.Debug().Model(&s).Select(args).Updates(s).Error
-	//return global.DB.Model(s).Select(args).Updates(s).Error
+	// return global.DB.Model(s).Select(args).Updates(s).Error
 }
 
 func AccountList(ctx context.Context, reqParam *QueryConfigRequest) (count int64, ret []Account, err error) {

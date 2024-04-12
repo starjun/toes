@@ -37,7 +37,7 @@ seckey:
   basekey: ""
   #  jwtKey: # 基于 basekey 计算
   jwtttl: 1024 # token 过期时间(分钟)
-  pproftoken : on # 配置访问 pprof 是否启用 token 检查
+  pproftoken: on # 配置访问 pprof 是否启用 token 检查
 
 
 # 防重放

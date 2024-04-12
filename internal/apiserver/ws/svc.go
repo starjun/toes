@@ -6,7 +6,8 @@ package ws
 
 import (
 	"time"
-	"toes/internal/sysinfo"
+
+	"toes/internal/apiserver/sysinfo"
 	"toes/internal/utils"
 )
 
@@ -20,7 +21,7 @@ func StartWS() {
 	hub = newHub()
 	go hub.run()
 
-	//go PushMessage(hub)
+	// go PushMessage(hub)
 }
 
 func PushMessage(h *Hub) {

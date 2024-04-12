@@ -1,11 +1,13 @@
 package middleware
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/starjun/gotools"
 	"net/http"
 	"strings"
-	"toes/internal/request"
+
+	"github.com/gin-gonic/gin"
+	"github.com/starjun/gotools"
+
+	"toes/internal/apiserver/http/request"
 	"toes/internal/utils"
 )
 

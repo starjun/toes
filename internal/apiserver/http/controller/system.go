@@ -1,20 +1,21 @@
-package controllers
+package controller
 
 import (
 	"fmt"
+	"net/http/pprof"
+	"strings"
+
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	"github.com/starjun/jobrunner"
-	"net/http/pprof"
-	"strings"
+
 	"toes/global"
-	"toes/internal/request"
-	"toes/internal/sysinfo"
-	"toes/internal/ws"
+	"toes/internal/apiserver/http/request"
+	"toes/internal/apiserver/sysinfo"
+	"toes/internal/apiserver/ws"
 )
 
-type systemCtrl struct {
-}
+type systemCtrl struct{}
 
 var (
 	SystemCtrl *systemCtrl
@@ -45,7 +46,7 @@ func (self *systemCtrl) SysInfo(c *gin.Context) {
 func (self *systemCtrl) Pprof(c *gin.Context) {
 	token := strings.TrimSpace(c.Request.URL.Query().Get("token"))
 	if global.Cfg.Seckey.Pproftoken == "on" {
-		//// 校验token
+		// // 校验token
 		if token == "" {
 			request.WriteResponseErr(c, "1001", nil, "参数token异常")
 			return
@@ -101,7 +102,7 @@ func (self *systemCtrl) Ws(c *gin.Context) {
 	}
 	ws.ServeWS(ws.GetHub(), conn)
 
-	//core.WriteResponse(c, nil, nil)
+	// core.WriteResponse(c, nil, nil)
 	c.JSON(200, request.Response{
 		Code:    "0",
 		Message: "systemCtrl Ws success",
@@ -120,8 +121,8 @@ func (self *systemCtrl) JobDo(c *gin.Context) {
 		str_id := fmt.Sprintf("%v", v.ID)
 		if str_id == JobId {
 			isExist = "true"
-			//log.Println(k, " Job.Run() From api")
-			//log.Println(v.ID, " ", str_id)
+			// log.Println(k, " Job.Run() From api")
+			// log.Println(v.ID, " ", str_id)
 			jobrunner.Now(v.Job)
 			break
 		}

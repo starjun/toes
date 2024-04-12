@@ -2,14 +2,15 @@ package sysinfo
 
 import (
 	"fmt"
+	"net"
+	"time"
+
 	"github.com/shirou/gopsutil/v3/cpu"
 	"github.com/shirou/gopsutil/v3/disk"
 	"github.com/shirou/gopsutil/v3/host"
 	"github.com/shirou/gopsutil/v3/load"
 	"github.com/shirou/gopsutil/v3/mem"
 	psnet "github.com/shirou/gopsutil/v3/net"
-	"net"
-	"time"
 )
 
 func GetMemInfo() *mem.VirtualMemoryStat {

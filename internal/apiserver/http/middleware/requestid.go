@@ -3,6 +3,7 @@ package middleware
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
+
 	"toes/global"
 )
 
@@ -28,7 +29,7 @@ func RealIp() gin.HandlerFunc {
 		// Check for incoming header, use it if exists
 		rip := c.GetHeader(global.Cfg.Header.Realip)
 		if rip == "" {
-			//rip = c.Request.RemoteAddr
+			// rip = c.Request.RemoteAddr
 			rip = c.ClientIP()
 		}
 		c.Set(global.Cfg.Header.Realip, rip)

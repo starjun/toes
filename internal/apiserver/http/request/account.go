@@ -2,7 +2,8 @@ package request
 
 import (
 	validation "github.com/go-ozzo/ozzo-validation/v4"
-	"toes/internal/models"
+
+	"toes/internal/apiserver/model"
 )
 
 type CreateUser struct {
@@ -37,11 +38,11 @@ func (v *UpdataUserRequest) Validate() error {
 }
 
 type ListUserResponse struct {
-	TotalCount int64            `json:"totalCount"`
-	List       []models.Account `json:"data"`
+	TotalCount int64           `json:"totalCount"`
+	List       []model.Account `json:"data"`
 }
 
 type ListUserExtResponse struct {
-	TotalCount int64               `json:"totalCount"`
-	List       []models.AccountExt `json:"data"`
+	TotalCount int64              `json:"totalCount"`
+	List       []model.AccountExt `json:"data"`
 }
