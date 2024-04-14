@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"gorm.io/gorm"
+	"strings"
 	"toes/global"
 )
 
@@ -172,4 +173,22 @@ func AccountListExt(ctx context.Context, reqParam *QueryConfigRequest) (count in
 		Count(&count).
 		Error
 	return count, ret, err
+}
+func AccountQueryList(ctx context.Context, _reqParam map[string]interface{}) (ret []Account, totalCount int64, err error) {
+	dbObj := global.DB
+	err = dbObj.Scopes(func(db *gorm.DB) *gorm.DB {
+		for k, v := range _reqParam {
+			db.Where(strings.TrimSpace(k)+" = ?", strings.TrimSpace(v.(string)))
+		}
+
+		return db
+	}).Offset(_reqParam["offset"].(int)).
+		Limit(defaultLimit(_reqParam["limit"].(int))).
+		Find(&ret).
+		Offset(-1).
+		Limit(-1).
+		Count(&totalCount).
+		Error
+
+	return ret, totalCount, err
 }

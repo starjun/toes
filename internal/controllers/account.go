@@ -3,9 +3,11 @@ package controllers
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/copier"
+	"github.com/mitchellh/mapstructure"
 	"toes/global"
 	"toes/internal/models"
 	"toes/internal/request"
+	"toes/internal/services"
 )
 
 type accountCtrl struct {
@@ -209,4 +211,54 @@ func (self *accountCtrl) ListExt(c *gin.Context) {
 	request.WriteResponseList(c, "", *_data, models.AccountIistMeta)
 	return
 
+}
+
+// 没有查询配置的列表
+func (self *accountCtrl) QueryList(c *gin.Context) {
+	var r request.QueryListParamRequest
+	if err := c.ShouldBindJSON(&r); err != nil {
+		request.WriteResponseErr(c, "1001", nil, "QueryListParamRequest error")
+		return
+	}
+	reqMap := map[string]interface{}{}
+	mapstructure.Decode(r, &reqMap)
+	resp, cnt, err := models.AccountQueryList(c, reqMap)
+	if err != nil {
+		request.WriteResponseErr(c, "1000", nil, err.Error())
+		return
+	}
+	_data := &request.ListUserResponse{
+		TotalCount: cnt,
+		List:       resp,
+	}
+	request.WriteResponseList(c, "", *_data, models.AccountIistMeta)
+	return
+}
+
+// 从结果筛选
+func (self *accountCtrl) FilterQueryFromResult(c *gin.Context) {
+
+	var r models.QueryConfigRequest
+	if err := c.ShouldBindJSON(&r); err != nil {
+		request.WriteResponseErr(c, "1001", nil, "QueryConfigRequest error")
+		return
+	}
+
+	// Validator
+	if err := r.Check(); err != nil {
+		request.WriteResponseErr(c, "1001", nil, "QueryConfigRequest.Validate error")
+		return
+	}
+
+	resp, cnt, err := services.Account.FilterQueryFromResult(c, &r)
+	if err != nil {
+		request.WriteResponseErr(c, "1000", nil, err.Error())
+		return
+	}
+	_data := &request.ListUserResponse{
+		TotalCount: int64(cnt),
+		List:       resp,
+	}
+	request.WriteResponseList(c, "", *_data, models.AccountIistMeta)
+	return
 }
