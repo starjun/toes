@@ -3,8 +3,6 @@ package internal
 import (
 	"context"
 	"errors"
-	"github.com/gin-gonic/gin"
-	"github.com/starjun/jobrunner"
 	"log"
 	"net/http"
 	"os"
@@ -16,6 +14,10 @@ import (
 	"toes/internal/routers"
 	"toes/internal/ws"
 	"toes/jobs"
+
+	"github.com/gin-gonic/gin"
+	"github.com/starjun/jobrunner"
+	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
 )
 
 func InitJob() {
@@ -71,7 +73,8 @@ func startSecureServer(g *gin.Engine) *http.Server {
 func Run() error {
 	// 初始化 localcache 层
 	global.InitLocalCache()
-
+	// 初始化 opentrace
+	global.InitTrace()
 	// 初始化 redis
 	// 初始化失败自动退出
 	//global.InitRedis()
@@ -93,6 +96,7 @@ func Run() error {
 
 	// gin.Recovery() 中间件，用来捕获任何 panic，并恢复
 	mws := []gin.HandlerFunc{
+		otelgin.Middleware("toes"),
 		middleware.RequestID(),
 		middleware.RealIp(),
 		gin.Recovery(),

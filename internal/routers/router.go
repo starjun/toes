@@ -1,11 +1,12 @@
 package routers
 
 import (
-	"github.com/gin-gonic/gin"
 	"time"
 	"toes/global"
 	"toes/internal/controllers"
 	"toes/internal/middleware"
+
+	"github.com/gin-gonic/gin"
 )
 
 func InstallRouters(g *gin.Engine) error {
@@ -19,7 +20,7 @@ func InstallRouters(g *gin.Engine) error {
 			"message": "pong",
 		})
 	})
-
+	g.GET("/test", controllers.TestCtrl.Test)
 	v1 := g.Group("/v1")
 
 	if global.Cfg.CheckHeader.All {
