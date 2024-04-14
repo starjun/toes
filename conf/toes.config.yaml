@@ -1,4 +1,5 @@
 # toes-server 全配置
+appName: toes
 
 # REST-ful Server
 server:

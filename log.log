@@ -1,106 +1,252 @@
-{"level":"[INFO]","ts":"2023-11-23T20:30:10.433+0800","caller_line":"[global/gl.go:109]","msg":"RedisClient.Ping error"}
-{"level":"[INFO]","ts":"2023-11-23T20:31:05.272+0800","caller_line":"[global/gl.go:109]","msg":"RedisClient.Ping error"}
-{"level":"[ERROR]","ts":"2023-11-23T20:31:26.383+0800","caller_line":"[global/log.go:140]","msg":"mysql连接失败","Subject":"mysql","Result":"dial tcp 101.132.228.16:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
-{"level":"[INFO]","ts":"2023-11-23T20:31:58.116+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
-{"level":"[INFO]","ts":"2023-11-23T20:32:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
-{"level":"[INFO]","ts":"2023-11-23T20:32:12.131+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","status":404,"method":"GET","path":"/ping","query":"","ip":"127.0.0.1","cost":0,"errors":""}
-{"level":"[INFO]","ts":"2023-11-23T20:32:12.672+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","status":404,"method":"GET","path":"/ping","query":"","ip":"127.0.0.1","cost":0,"errors":""}
-{"level":"[INFO]","ts":"2023-11-23T20:32:12.856+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","cost":0,"errors":""}
-{"level":"[INFO]","ts":"2023-11-23T20:32:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
-{"level":"[INFO]","ts":"2023-11-23T20:32:21.779+0800","caller_line":"[internal/server.go:124]","msg":"Shutting down server ..."}
-{"level":"[INFO]","ts":"2023-11-23T20:32:21.780+0800","caller_line":"[internal/server.go:144]","msg":"Server exiting"}
-{"level":"[INFO]","ts":"2023-11-23T20:34:01.720+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
-{"level":"[INFO]","ts":"2023-11-23T20:34:04.620+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"16bdc385-883b-4bc8-8bc9-2b19d34113d5","status":404,"method":"GET","path":"/ping","query":"","ip":"127.0.0.1","cost":0,"errors":""}
-{"level":"[INFO]","ts":"2023-11-23T20:34:05.067+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"27f8d3fb-c4ca-40d6-a099-d8d5c6b51d7e","status":404,"method":"GET","path":"/ping","query":"","ip":"127.0.0.1","cost":0,"errors":""}
-{"level":"[INFO]","ts":"2023-11-23T20:34:11.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
-{"level":"[INFO]","ts":"2023-11-23T20:34:18.003+0800","caller_line":"[internal/server.go:124]","msg":"Shutting down server ..."}
-{"level":"[INFO]","ts":"2023-11-23T20:34:18.003+0800","caller_line":"[internal/server.go:144]","msg":"Server exiting"}
-{"level":"[INFO]","ts":"2023-11-23T20:56:22.897+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
-{"level":"[INFO]","ts":"2023-11-23T20:56:27.171+0800","caller_line":"[internal/server.go:124]","msg":"Shutting down server ..."}
-{"level":"[INFO]","ts":"2023-11-23T20:56:27.171+0800","caller_line":"[internal/server.go:144]","msg":"Server exiting"}
-{"level":"[INFO]","ts":"2024-04-14T13:22:31.635+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
-{"level":"[INFO]","ts":"2024-04-14T13:22:41.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
-{"level":"[INFO]","ts":"2024-04-14T13:22:51.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
-{"level":"[INFO]","ts":"2024-04-14T13:23:01.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
-{"level":"[INFO]","ts":"2024-04-14T13:23:11.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
-{"level":"[INFO]","ts":"2024-04-14T13:23:21.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
-{"level":"[INFO]","ts":"2024-04-14T13:23:31.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 5"}
-{"level":"[INFO]","ts":"2024-04-14T13:23:41.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 6"}
-{"level":"[INFO]","ts":"2024-04-14T13:23:51.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 7"}
-{"level":"[INFO]","ts":"2024-04-14T13:24:01.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 8"}
-{"level":"[INFO]","ts":"2024-04-14T13:24:11.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 9"}
-{"level":"[INFO]","ts":"2024-04-14T13:24:16.417+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"21c3775e-4925-493a-ace3-52c0bbac5533","status":404,"method":"GET","path":"/","query":"","ip":"127.0.0.1","cost":0.000063756,"errors":""}
-{"level":"[INFO]","ts":"2024-04-14T13:24:16.480+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"4af041a1-53b5-4da3-93b4-9fb844fa68d4","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","cost":0.00000021,"errors":""}
-{"level":"[INFO]","ts":"2024-04-14T13:24:21.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 10"}
-{"level":"[INFO]","ts":"2024-04-14T13:24:31.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 11"}
-{"level":"[INFO]","ts":"2024-04-14T13:24:41.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 12"}
-{"level":"[INFO]","ts":"2024-04-14T13:24:51.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 13"}
-{"level":"[INFO]","ts":"2024-04-14T13:25:01.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 14"}
-{"level":"[INFO]","ts":"2024-04-14T13:25:11.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 15"}
-{"level":"[INFO]","ts":"2024-04-14T13:25:21.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 16"}
-{"level":"[INFO]","ts":"2024-04-14T13:25:31.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 17"}
-{"level":"[INFO]","ts":"2024-04-14T13:25:41.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 18"}
-{"level":"[INFO]","ts":"2024-04-14T13:25:51.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 19"}
-{"level":"[INFO]","ts":"2024-04-14T13:26:00.844+0800","caller_line":"[internal/server.go:124]","msg":"Shutting down server ..."}
-{"level":"[INFO]","ts":"2024-04-14T13:26:00.845+0800","caller_line":"[internal/server.go:144]","msg":"Server exiting"}
-{"level":"[INFO]","ts":"2024-04-14T13:37:46.926+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
-{"level":"[INFO]","ts":"2024-04-14T13:37:56.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
-{"level":"[INFO]","ts":"2024-04-14T13:38:06.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
-{"level":"[INFO]","ts":"2024-04-14T13:38:13.534+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"1ef2527b-e92c-47d1-819d-65d719ba8fc1","status":404,"method":"GET","path":"/","query":"","ip":"::1","cost":0.000052785,"errors":""}
-{"level":"[INFO]","ts":"2024-04-14T13:38:13.595+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"ba721561-7f7b-4407-9d35-7d017286f037","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"::1","cost":0.000000318,"errors":""}
-{"level":"[INFO]","ts":"2024-04-14T13:38:16.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
-{"level":"[INFO]","ts":"2024-04-14T13:38:26.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
-{"level":"[INFO]","ts":"2024-04-14T13:38:36.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
-{"level":"[INFO]","ts":"2024-04-14T13:38:46.007+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 5"}
-{"level":"[INFO]","ts":"2024-04-14T13:38:54.849+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"a910eb36-afdb-4e28-9fc7-d3bb5d079d00","status":404,"method":"GET","path":"/","query":"","ip":"::1","cost":0.000022509,"errors":""}
-{"level":"[INFO]","ts":"2024-04-14T13:38:56.004+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 6"}
-{"level":"[INFO]","ts":"2024-04-14T13:39:06.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 7"}
-{"level":"[INFO]","ts":"2024-04-14T13:39:16.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 8"}
-{"level":"[INFO]","ts":"2024-04-14T13:39:26.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 9"}
-{"level":"[INFO]","ts":"2024-04-14T13:39:36.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 10"}
-{"level":"[INFO]","ts":"2024-04-14T13:39:46.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 11"}
-{"level":"[INFO]","ts":"2024-04-14T13:39:56.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 12"}
-{"level":"[INFO]","ts":"2024-04-14T13:40:06.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 13"}
-{"level":"[INFO]","ts":"2024-04-14T13:40:16.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 14"}
-{"level":"[INFO]","ts":"2024-04-14T13:40:26.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 15"}
-{"level":"[INFO]","ts":"2024-04-14T13:40:36.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 16"}
-{"level":"[INFO]","ts":"2024-04-14T13:40:46.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 17"}
-{"level":"[INFO]","ts":"2024-04-14T13:40:56.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 18"}
-{"level":"[INFO]","ts":"2024-04-14T13:41:06.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 19"}
-{"level":"[INFO]","ts":"2024-04-14T13:41:16.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 20"}
-{"level":"[INFO]","ts":"2024-04-14T13:41:26.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 21"}
-{"level":"[INFO]","ts":"2024-04-14T13:41:36.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 22"}
-{"level":"[INFO]","ts":"2024-04-14T13:41:46.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 23"}
-{"level":"[INFO]","ts":"2024-04-14T13:41:56.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 24"}
-{"level":"[INFO]","ts":"2024-04-14T13:42:06.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 25"}
-{"level":"[INFO]","ts":"2024-04-14T13:42:16.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 26"}
-{"level":"[INFO]","ts":"2024-04-14T13:42:26.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 27"}
-{"level":"[INFO]","ts":"2024-04-14T13:42:36.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 28"}
-{"level":"[INFO]","ts":"2024-04-14T13:42:46.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 29"}
-{"level":"[INFO]","ts":"2024-04-14T13:42:52.100+0800","caller_line":"[internal/server.go:128]","msg":"Shutting down server ..."}
-{"level":"[INFO]","ts":"2024-04-14T13:42:52.100+0800","caller_line":"[internal/server.go:148]","msg":"Server exiting"}
-{"level":"[INFO]","ts":"2024-04-14T13:42:59.252+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
-{"level":"[INFO]","ts":"2024-04-14T13:43:09.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
-{"level":"[INFO]","ts":"2024-04-14T13:43:19.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
-{"level":"[INFO]","ts":"2024-04-14T13:43:29.006+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
-{"level":"[INFO]","ts":"2024-04-14T13:43:32.449+0800","caller_line":"[internal/server.go:128]","msg":"Shutting down server ..."}
-{"level":"[INFO]","ts":"2024-04-14T13:43:32.450+0800","caller_line":"[internal/server.go:148]","msg":"Server exiting"}
-{"level":"[INFO]","ts":"2024-04-14T13:43:35.970+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
-{"level":"[INFO]","ts":"2024-04-14T13:43:40.820+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"e04b8880-8d1b-4b30-aef7-8c8aad03e799","status":404,"method":"GET","path":"/","query":"","ip":"::1","cost":0.00004408,"errors":""}
-{"level":"[INFO]","ts":"2024-04-14T13:43:45.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
-{"level":"[INFO]","ts":"2024-04-14T13:43:45.707+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"138a1ed2-c3ab-452d-879b-5f40d205f373","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000005574,"errors":""}
-{"level":"[INFO]","ts":"2024-04-14T13:43:55.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
-{"level":"[INFO]","ts":"2024-04-14T13:44:05.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
-{"level":"[INFO]","ts":"2024-04-14T13:44:15.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
-{"level":"[INFO]","ts":"2024-04-14T13:44:25.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
-{"level":"[INFO]","ts":"2024-04-14T13:44:32.509+0800","caller_line":"[internal/server.go:128]","msg":"Shutting down server ..."}
-{"level":"[INFO]","ts":"2024-04-14T13:44:32.509+0800","caller_line":"[internal/server.go:148]","msg":"Server exiting"}
-{"level":"[INFO]","ts":"2024-04-14T13:44:35.859+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
-{"level":"[INFO]","ts":"2024-04-14T13:44:45.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
-{"level":"[INFO]","ts":"2024-04-14T13:44:48.924+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"0af885cb-55b8-478f-83ae-6ee324e02f22","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000118168,"errors":""}
-{"level":"[INFO]","ts":"2024-04-14T13:44:55.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
-{"level":"[INFO]","ts":"2024-04-14T13:45:05.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
-{"level":"[INFO]","ts":"2024-04-14T13:45:15.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
-{"level":"[INFO]","ts":"2024-04-14T13:45:25.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
-{"level":"[INFO]","ts":"2024-04-14T13:45:35.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 5"}
-{"level":"[INFO]","ts":"2024-04-14T13:45:45.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 6"}
+{"level":"[INFO]","ts":"2024-04-14T13:53:02.513+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T13:53:12.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
+{"level":"[INFO]","ts":"2024-04-14T13:53:22.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
+{"level":"[INFO]","ts":"2024-04-14T13:53:32.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
+{"level":"[INFO]","ts":"2024-04-14T13:53:42.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
+{"level":"[INFO]","ts":"2024-04-14T13:53:52.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
+{"level":"[INFO]","ts":"2024-04-14T13:54:02.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 5"}
+{"level":"[INFO]","ts":"2024-04-14T13:54:12.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 6"}
+{"level":"[INFO]","ts":"2024-04-14T13:54:15.026+0800","caller_line":"[internal/server.go:128]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-14T13:54:15.026+0800","caller_line":"[internal/server.go:148]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-14T13:54:18.618+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T13:54:28.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
+{"level":"[INFO]","ts":"2024-04-14T13:54:38.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
+{"level":"[INFO]","ts":"2024-04-14T13:54:48.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
+{"level":"[INFO]","ts":"2024-04-14T13:54:58.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
+{"level":"[INFO]","ts":"2024-04-14T13:55:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
+{"level":"[INFO]","ts":"2024-04-14T13:55:18.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 5"}
+{"level":"[INFO]","ts":"2024-04-14T13:55:28.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 6"}
+{"level":"[INFO]","ts":"2024-04-14T13:55:38.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 7"}
+{"level":"[INFO]","ts":"2024-04-14T13:55:48.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 8"}
+{"level":"[INFO]","ts":"2024-04-14T13:55:58.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 9"}
+{"level":"[INFO]","ts":"2024-04-14T13:56:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 10"}
+{"level":"[INFO]","ts":"2024-04-14T13:56:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 11"}
+{"level":"[INFO]","ts":"2024-04-14T13:56:28.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 12"}
+{"level":"[INFO]","ts":"2024-04-14T13:56:38.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 13"}
+{"level":"[INFO]","ts":"2024-04-14T13:56:48.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 14"}
+{"level":"[INFO]","ts":"2024-04-14T13:56:58.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 15"}
+{"level":"[INFO]","ts":"2024-04-14T13:57:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 16"}
+{"level":"[INFO]","ts":"2024-04-14T13:57:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 17"}
+{"level":"[INFO]","ts":"2024-04-14T13:57:28.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 18"}
+{"level":"[INFO]","ts":"2024-04-14T13:57:38.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 19"}
+{"level":"[INFO]","ts":"2024-04-14T13:57:48.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 20"}
+{"level":"[INFO]","ts":"2024-04-14T13:57:58.006+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 21"}
+{"level":"[INFO]","ts":"2024-04-14T13:58:08.004+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 22"}
+{"level":"[INFO]","ts":"2024-04-14T13:58:18.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 23"}
+{"level":"[INFO]","ts":"2024-04-14T13:58:28.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 24"}
+{"level":"[INFO]","ts":"2024-04-14T13:58:38.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 25"}
+{"level":"[INFO]","ts":"2024-04-14T13:58:48.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 26"}
+{"level":"[INFO]","ts":"2024-04-14T13:58:58.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 27"}
+{"level":"[INFO]","ts":"2024-04-14T13:59:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 28"}
+{"level":"[INFO]","ts":"2024-04-14T13:59:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 29"}
+{"level":"[INFO]","ts":"2024-04-14T13:59:28.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 30"}
+{"level":"[INFO]","ts":"2024-04-14T13:59:38.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 31"}
+{"level":"[INFO]","ts":"2024-04-14T13:59:48.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 32"}
+{"level":"[INFO]","ts":"2024-04-14T13:59:58.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 33"}
+{"level":"[INFO]","ts":"2024-04-14T14:00:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 34"}
+{"level":"[INFO]","ts":"2024-04-14T14:00:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 35"}
+{"level":"[INFO]","ts":"2024-04-14T14:00:28.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 36"}
+{"level":"[INFO]","ts":"2024-04-14T14:00:38.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 37"}
+{"level":"[INFO]","ts":"2024-04-14T14:00:48.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 38"}
+{"level":"[INFO]","ts":"2024-04-14T14:00:58.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 39"}
+{"level":"[INFO]","ts":"2024-04-14T14:01:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 40"}
+{"level":"[INFO]","ts":"2024-04-14T14:01:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 41"}
+{"level":"[INFO]","ts":"2024-04-14T14:01:28.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 42"}
+{"level":"[INFO]","ts":"2024-04-14T14:01:38.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 43"}
+{"level":"[INFO]","ts":"2024-04-14T14:01:48.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 44"}
+{"level":"[INFO]","ts":"2024-04-14T14:01:58.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 45"}
+{"level":"[INFO]","ts":"2024-04-14T14:02:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 46"}
+{"level":"[INFO]","ts":"2024-04-14T14:02:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 47"}
+{"level":"[INFO]","ts":"2024-04-14T14:02:28.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 48"}
+{"level":"[INFO]","ts":"2024-04-14T14:02:38.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 49"}
+{"level":"[INFO]","ts":"2024-04-14T14:02:48.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 50"}
+{"level":"[INFO]","ts":"2024-04-14T14:02:58.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 51"}
+{"level":"[INFO]","ts":"2024-04-14T14:03:08.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 52"}
+{"level":"[INFO]","ts":"2024-04-14T14:03:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 53"}
+{"level":"[INFO]","ts":"2024-04-14T14:03:28.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 54"}
+{"level":"[INFO]","ts":"2024-04-14T14:03:38.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 55"}
+{"level":"[INFO]","ts":"2024-04-14T14:03:48.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 56"}
+{"level":"[INFO]","ts":"2024-04-14T14:03:58.003+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 57"}
+{"level":"[INFO]","ts":"2024-04-14T14:04:08.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 58"}
+{"level":"[INFO]","ts":"2024-04-14T14:04:18.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 59"}
+{"level":"[INFO]","ts":"2024-04-14T14:04:28.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 60"}
+{"level":"[INFO]","ts":"2024-04-14T14:04:38.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 61"}
+{"level":"[INFO]","ts":"2024-04-14T14:04:40.937+0800","caller_line":"[internal/server.go:129]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-14T14:04:40.937+0800","caller_line":"[internal/server.go:149]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-14T14:05:40.959+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T14:05:46.227+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"782c80df-2462-40d4-ab52-4853420d71c0","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000151144,"errors":""}
+{"level":"[INFO]","ts":"2024-04-14T14:05:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
+{"level":"[INFO]","ts":"2024-04-14T14:06:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
+{"level":"[INFO]","ts":"2024-04-14T14:06:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
+{"level":"[INFO]","ts":"2024-04-14T14:06:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
+{"level":"[INFO]","ts":"2024-04-14T14:06:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
+{"level":"[INFO]","ts":"2024-04-14T14:06:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 5"}
+{"level":"[INFO]","ts":"2024-04-14T14:06:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 6"}
+{"level":"[INFO]","ts":"2024-04-14T14:07:00.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 7"}
+{"level":"[INFO]","ts":"2024-04-14T14:07:10.005+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 8"}
+{"level":"[INFO]","ts":"2024-04-14T14:07:20.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 9"}
+{"level":"[INFO]","ts":"2024-04-14T14:07:30.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 10"}
+{"level":"[INFO]","ts":"2024-04-14T14:07:40.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 11"}
+{"level":"[INFO]","ts":"2024-04-14T14:07:50.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 12"}
+{"level":"[INFO]","ts":"2024-04-14T14:08:00.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 13"}
+{"level":"[INFO]","ts":"2024-04-14T14:08:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 14"}
+{"level":"[INFO]","ts":"2024-04-14T14:08:20.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 15"}
+{"level":"[INFO]","ts":"2024-04-14T14:08:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 16"}
+{"level":"[INFO]","ts":"2024-04-14T14:08:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 17"}
+{"level":"[INFO]","ts":"2024-04-14T14:08:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 18"}
+{"level":"[INFO]","ts":"2024-04-14T14:09:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 19"}
+{"level":"[INFO]","ts":"2024-04-14T14:09:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 20"}
+{"level":"[INFO]","ts":"2024-04-14T14:09:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 21"}
+{"level":"[INFO]","ts":"2024-04-14T14:09:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 22"}
+{"level":"[INFO]","ts":"2024-04-14T14:09:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 23"}
+{"level":"[INFO]","ts":"2024-04-14T14:09:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 24"}
+{"level":"[INFO]","ts":"2024-04-14T14:10:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 25"}
+{"level":"[INFO]","ts":"2024-04-14T14:10:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 26"}
+{"level":"[INFO]","ts":"2024-04-14T14:10:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 27"}
+{"level":"[INFO]","ts":"2024-04-14T14:10:30.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 28"}
+{"level":"[INFO]","ts":"2024-04-14T14:10:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 29"}
+{"level":"[INFO]","ts":"2024-04-14T14:10:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 30"}
+{"level":"[INFO]","ts":"2024-04-14T14:11:00.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 31"}
+{"level":"[INFO]","ts":"2024-04-14T14:11:10.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 32"}
+{"level":"[INFO]","ts":"2024-04-14T14:11:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 33"}
+{"level":"[INFO]","ts":"2024-04-14T14:11:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 34"}
+{"level":"[INFO]","ts":"2024-04-14T14:11:40.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 35"}
+{"level":"[INFO]","ts":"2024-04-14T14:11:50.006+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 36"}
+{"level":"[INFO]","ts":"2024-04-14T14:12:00.003+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 37"}
+{"level":"[INFO]","ts":"2024-04-14T14:12:10.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 38"}
+{"level":"[INFO]","ts":"2024-04-14T14:12:20.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 39"}
+{"level":"[INFO]","ts":"2024-04-14T14:12:30.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 40"}
+{"level":"[INFO]","ts":"2024-04-14T14:12:40.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 41"}
+{"level":"[INFO]","ts":"2024-04-14T14:12:50.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 42"}
+{"level":"[INFO]","ts":"2024-04-14T14:13:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 43"}
+{"level":"[INFO]","ts":"2024-04-14T14:13:10.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 44"}
+{"level":"[INFO]","ts":"2024-04-14T14:13:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 45"}
+{"level":"[INFO]","ts":"2024-04-14T14:13:30.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 46"}
+{"level":"[INFO]","ts":"2024-04-14T14:13:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 47"}
+{"level":"[INFO]","ts":"2024-04-14T14:13:50.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 48"}
+{"level":"[INFO]","ts":"2024-04-14T14:14:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 49"}
+{"level":"[INFO]","ts":"2024-04-14T14:14:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 50"}
+{"level":"[INFO]","ts":"2024-04-14T14:14:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 51"}
+{"level":"[INFO]","ts":"2024-04-14T14:14:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 52"}
+{"level":"[INFO]","ts":"2024-04-14T14:14:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 53"}
+{"level":"[INFO]","ts":"2024-04-14T14:14:50.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 54"}
+{"level":"[INFO]","ts":"2024-04-14T14:15:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 55"}
+{"level":"[INFO]","ts":"2024-04-14T14:15:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 56"}
+{"level":"[INFO]","ts":"2024-04-14T14:15:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 57"}
+{"level":"[INFO]","ts":"2024-04-14T14:15:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 58"}
+{"level":"[INFO]","ts":"2024-04-14T14:15:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 59"}
+{"level":"[INFO]","ts":"2024-04-14T14:15:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 60"}
+{"level":"[INFO]","ts":"2024-04-14T14:16:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 61"}
+{"level":"[INFO]","ts":"2024-04-14T14:16:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 62"}
+{"level":"[INFO]","ts":"2024-04-14T14:16:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 63"}
+{"level":"[INFO]","ts":"2024-04-14T14:16:30.006+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 64"}
+{"level":"[INFO]","ts":"2024-04-14T14:16:40.003+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 65"}
+{"level":"[INFO]","ts":"2024-04-14T14:16:50.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 66"}
+{"level":"[INFO]","ts":"2024-04-14T14:17:00.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 67"}
+{"level":"[INFO]","ts":"2024-04-14T14:17:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 68"}
+{"level":"[INFO]","ts":"2024-04-14T14:17:20.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 69"}
+{"level":"[INFO]","ts":"2024-04-14T14:17:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 70"}
+{"level":"[INFO]","ts":"2024-04-14T14:17:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 71"}
+{"level":"[INFO]","ts":"2024-04-14T14:17:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 72"}
+{"level":"[INFO]","ts":"2024-04-14T14:18:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 73"}
+{"level":"[INFO]","ts":"2024-04-14T14:18:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 74"}
+{"level":"[INFO]","ts":"2024-04-14T14:18:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 75"}
+{"level":"[INFO]","ts":"2024-04-14T14:18:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 76"}
+{"level":"[INFO]","ts":"2024-04-14T14:18:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 77"}
+{"level":"[INFO]","ts":"2024-04-14T14:18:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 78"}
+{"level":"[INFO]","ts":"2024-04-14T14:19:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 79"}
+{"level":"[INFO]","ts":"2024-04-14T14:19:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 80"}
+{"level":"[INFO]","ts":"2024-04-14T14:19:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 81"}
+{"level":"[INFO]","ts":"2024-04-14T14:19:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 82"}
+{"level":"[INFO]","ts":"2024-04-14T14:19:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 83"}
+{"level":"[INFO]","ts":"2024-04-14T14:19:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 84"}
+{"level":"[INFO]","ts":"2024-04-14T14:20:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 85"}
+{"level":"[INFO]","ts":"2024-04-14T14:20:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 86"}
+{"level":"[INFO]","ts":"2024-04-14T14:20:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 87"}
+{"level":"[INFO]","ts":"2024-04-14T14:20:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 88"}
+{"level":"[INFO]","ts":"2024-04-14T14:20:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 89"}
+{"level":"[INFO]","ts":"2024-04-14T14:20:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 90"}
+{"level":"[INFO]","ts":"2024-04-14T14:21:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 91"}
+{"level":"[INFO]","ts":"2024-04-14T14:21:10.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 92"}
+{"level":"[INFO]","ts":"2024-04-14T14:21:20.003+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 93"}
+{"level":"[INFO]","ts":"2024-04-14T14:21:30.002+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 94"}
+{"level":"[INFO]","ts":"2024-04-14T14:21:40.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 95"}
+{"level":"[INFO]","ts":"2024-04-14T14:21:50.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 96"}
+{"level":"[INFO]","ts":"2024-04-14T14:22:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 97"}
+{"level":"[INFO]","ts":"2024-04-14T14:22:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 98"}
+{"level":"[INFO]","ts":"2024-04-14T14:22:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 99"}
+{"level":"[INFO]","ts":"2024-04-14T14:22:30.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 100"}
+{"level":"[INFO]","ts":"2024-04-14T14:22:40.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 101"}
+{"level":"[INFO]","ts":"2024-04-14T14:22:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 102"}
+{"level":"[INFO]","ts":"2024-04-14T14:23:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 103"}
+{"level":"[INFO]","ts":"2024-04-14T14:23:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 104"}
+{"level":"[INFO]","ts":"2024-04-14T14:23:18.640+0800","caller_line":"[internal/server.go:129]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-14T14:23:18.640+0800","caller_line":"[internal/server.go:149]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-14T14:25:53.331+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T14:25:59.666+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"2bcc470f-4ab4-4538-8859-7a75b55c330f","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000103323,"errors":""}
+{"level":"[INFO]","ts":"2024-04-14T14:26:03.003+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
+{"level":"[INFO]","ts":"2024-04-14T14:26:13.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
+{"level":"[INFO]","ts":"2024-04-14T14:26:23.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
+{"level":"[INFO]","ts":"2024-04-14T14:26:33.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
+{"level":"[INFO]","ts":"2024-04-14T14:26:43.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
+{"level":"[INFO]","ts":"2024-04-14T14:26:53.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 5"}
+{"level":"[INFO]","ts":"2024-04-14T14:27:03.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 6"}
+{"level":"[INFO]","ts":"2024-04-14T14:27:13.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 7"}
+{"level":"[INFO]","ts":"2024-04-14T14:27:23.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 8"}
+{"level":"[INFO]","ts":"2024-04-14T14:27:33.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 9"}
+{"level":"[INFO]","ts":"2024-04-14T14:27:43.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 10"}
+{"level":"[INFO]","ts":"2024-04-14T14:27:53.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 11"}
+{"level":"[INFO]","ts":"2024-04-14T14:28:03.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 12"}
+{"level":"[INFO]","ts":"2024-04-14T14:28:13.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 13"}
+{"level":"[INFO]","ts":"2024-04-14T14:28:23.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 14"}
+{"level":"[INFO]","ts":"2024-04-14T14:28:33.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 15"}
+{"level":"[INFO]","ts":"2024-04-14T14:28:43.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 16"}
+{"level":"[INFO]","ts":"2024-04-14T14:28:53.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 17"}
+{"level":"[INFO]","ts":"2024-04-14T14:29:03.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 18"}
+{"level":"[INFO]","ts":"2024-04-14T14:29:13.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 19"}
+{"level":"[INFO]","ts":"2024-04-14T14:29:23.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 20"}
+{"level":"[INFO]","ts":"2024-04-14T14:29:33.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 21"}
+{"level":"[INFO]","ts":"2024-04-14T14:29:43.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 22"}
+{"level":"[INFO]","ts":"2024-04-14T14:29:53.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 23"}
+{"level":"[INFO]","ts":"2024-04-14T14:30:03.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 24"}
+{"level":"[INFO]","ts":"2024-04-14T14:30:13.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 25"}
+{"level":"[INFO]","ts":"2024-04-14T14:30:23.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 26"}
+{"level":"[INFO]","ts":"2024-04-14T14:30:33.004+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 27"}
+{"level":"[INFO]","ts":"2024-04-14T14:30:43.004+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 28"}
+{"level":"[INFO]","ts":"2024-04-14T14:30:53.003+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 29"}
+{"level":"[INFO]","ts":"2024-04-14T14:31:03.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 30"}
+{"level":"[INFO]","ts":"2024-04-14T14:31:13.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 31"}
+{"level":"[INFO]","ts":"2024-04-14T14:31:23.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 32"}
+{"level":"[INFO]","ts":"2024-04-14T14:31:23.675+0800","caller_line":"[internal/server.go:129]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-14T14:31:23.675+0800","caller_line":"[internal/server.go:149]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-14T14:31:29.537+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T14:31:39.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
+{"level":"[INFO]","ts":"2024-04-14T14:31:49.001+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
+{"level":"[INFO]","ts":"2024-04-14T14:31:59.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
+{"level":"[INFO]","ts":"2024-04-14T14:32:09.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
+{"level":"[INFO]","ts":"2024-04-14T14:32:19.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 4"}
+{"level":"[INFO]","ts":"2024-04-14T14:32:24.281+0800","caller_line":"[internal/server.go:129]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-14T14:32:24.282+0800","caller_line":"[internal/server.go:149]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-14T14:32:40.423+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T14:32:50.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 0"}
+{"level":"[INFO]","ts":"2024-04-14T14:33:00.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 1"}
+{"level":"[INFO]","ts":"2024-04-14T14:33:10.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 2"}
+{"level":"[INFO]","ts":"2024-04-14T14:33:20.000+0800","caller_line":"[jobs/jobdemo.go:11]","msg":"Hello,  xxxxx1 3"}
+{"level":"[INFO]","ts":"2024-04-14T14:33:25.942+0800","caller_line":"[internal/server.go:129]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-14T14:33:25.942+0800","caller_line":"[internal/server.go:149]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-14T14:33:28.880+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T14:33:36.454+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"126ea45e-b32d-4146-a93e-4f6bfcc75d8f","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000126427,"errors":""}
+{"level":"[INFO]","ts":"2024-04-14T14:33:43.388+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"4c4adbdf-c248-4d7c-93e2-ca0111445ddd","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000022832,"errors":""}
+{"level":"[INFO]","ts":"2024-04-14T14:33:48.906+0800","caller_line":"[global/handler.go:30]","msg":"traces export: context deadline exceeded: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing: dial tcp [::1]:443: connect: connection refused\""}
+{"level":"[INFO]","ts":"2024-04-14T14:33:58.912+0800","caller_line":"[global/handler.go:30]","msg":"traces export: context deadline exceeded: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing: dial tcp [::1]:443: connect: connection refused\""}
+{"level":"[INFO]","ts":"2024-04-14T14:34:08.916+0800","caller_line":"[global/handler.go:30]","msg":"traces export: context deadline exceeded: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing: dial tcp [::1]:443: connect: connection refused\""}
+{"level":"[INFO]","ts":"2024-04-14T14:34:49.557+0800","caller_line":"[internal/server.go:129]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-14T14:34:49.558+0800","caller_line":"[internal/server.go:149]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-14T14:34:52.758+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T14:35:10.484+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"2c2085bf-dccd-41e1-898f-276cfb558206","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000126275,"errors":""}
+{"level":"[INFO]","ts":"2024-04-14T14:35:22.764+0800","caller_line":"[global/handler.go:30]","msg":"traces export: context deadline exceeded: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing: dial tcp [::1]:4317: connect: connection refused\""}
+{"level":"[INFO]","ts":"2024-04-14T14:50:20.086+0800","caller_line":"[internal/server.go:129]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-14T14:50:20.087+0800","caller_line":"[internal/server.go:149]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-14T14:50:26.501+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-14T14:50:42.274+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"2b1d39e8-3369-4c45-9f8c-940b1709f3b3","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000153869,"errors":""}
+{"level":"[INFO]","ts":"2024-04-14T14:51:12.650+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"33b5c24f-0cd9-4c89-9f80-8843f858de8e","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000017761,"errors":""}

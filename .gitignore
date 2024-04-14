@@ -100,3 +100,5 @@ config.yaml
 local.*
 *.rdb
 websocket/
+log.*
+*.log

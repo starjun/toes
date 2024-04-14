@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"toes/global"
+	"toes/global/trace"
 	"toes/internal/request"
 
 	"github.com/gin-gonic/gin"
@@ -22,7 +22,7 @@ func init() {
 }
 
 func (self *testCtrl) Test(c *gin.Context) {
-	_, span := global.Tracer.Start(c.Request.Context(), "Test")
+	_, span := trace.Tracer.Start(c.Request.Context(), "Test")
 	defer span.End()
 
 	request.WriteResponseOk(c, "0", "ok", "")
