@@ -27,6 +27,11 @@ type AccountExt struct {
 	Ext  string `gorm:"column:ext;type:varchar(255)" json:"ext"`   // 扩展信息
 }
 
+const (
+	ContainOpt = "contains"
+	InOpt      = "in"
+)
+
 var AccountIistMeta = []map[string]interface{}{
 	{
 		"title":   "ID",
