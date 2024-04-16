@@ -309,3 +309,21 @@
 {"level":"[INFO]","ts":"2024-04-14T15:38:42.222+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"911309bb-00b0-40c0-a768-93e93cabd59a","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000123068,"errors":""}
 {"level":"[INFO]","ts":"2024-04-14T15:38:54.690+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"9633946b-2dc9-46f0-aa5c-1474cae3fffc","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000019333,"errors":""}
 {"level":"[INFO]","ts":"2024-04-14T15:39:25.799+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"9f215f84-38e8-4ce5-9f72-8f0c7cc74e95","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000022776,"errors":""}
+{"level":"[INFO]","ts":"2024-04-16T23:07:20.043+0800","caller_line":"[global/gl.go:83]","msg":"config file updated"}
+{"level":"[INFO]","ts":"2024-04-16T23:08:54.709+0800","caller_line":"[global/gl.go:83]","msg":"config file updated"}
+{"level":"[INFO]","ts":"2024-04-16T23:09:14.908+0800","caller_line":"[global/gl.go:83]","msg":"config file updated"}
+{"level":"[INFO]","ts":"2024-04-16T23:13:35.405+0800","caller_line":"[global/gl.go:83]","msg":"config file updated"}
+{"level":"[INFO]","ts":"2024-04-16T23:13:39.429+0800","caller_line":"[global/gl.go:83]","msg":"config file updated"}
+{"level":"[INFO]","ts":"2024-04-16T23:14:02.821+0800","caller_line":"[global/gl.go:83]","msg":"config file updated"}
+{"level":"[INFO]","ts":"2024-04-16T23:14:53.067+0800","caller_line":"[internal/server.go:129]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-16T23:14:53.071+0800","caller_line":"[internal/server.go:149]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-16T23:28:04.390+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-16T23:28:31.141+0800","caller_line":"[global/gl.go:83]","msg":"config file updated"}
+{"level":"[INFO]","ts":"2024-04-16T23:28:34.260+0800","caller_line":"[internal/server.go:128]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-16T23:28:34.260+0800","caller_line":"[internal/server.go:148]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2024-04-16T23:30:19.557+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":9999"}
+{"level":"[INFO]","ts":"2024-04-16T23:30:24.052+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"45f37b34-988f-4fee-ac4f-0446d56113bd","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000160813,"errors":""}
+{"level":"[INFO]","ts":"2024-04-16T23:30:41.156+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"925de6ac-0beb-4097-ad7f-126078f40932","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000016974,"errors":""}
+{"level":"[INFO]","ts":"2024-04-16T23:30:49.028+0800","caller_line":"[middleware/logger.go:19]","msg":"GIN","WEB":"GIN","Traceid":"498aff97-041f-4991-906e-3b139d22747c","status":200,"method":"GET","path":"/test","query":"","ip":"::1","cost":0.000018962,"errors":""}
+{"level":"[INFO]","ts":"2024-04-16T23:30:55.306+0800","caller_line":"[internal/server.go:128]","msg":"Shutting down server ..."}
+{"level":"[INFO]","ts":"2024-04-16T23:30:55.306+0800","caller_line":"[internal/server.go:148]","msg":"Server exiting"}

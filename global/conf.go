@@ -3,16 +3,16 @@ package global
 import "time"
 
 type Config struct {
-	AppName      string       `mapstructure:"appName" json:"appName" yaml:"appName"`
-	Log          Log          `mapstructure:"log" json:"log" yaml:"log"`
-	Seckey       Seckey       `mapstructure:"seckey" json:"seckey" yaml:"seckey"`
-	CheckHeader  CheckHeader  `mapstructure:"checkHeader" json:"checkHeader" yaml:"checkHeader"`
-	Server       Server       `mapstructure:"server" json:"server" yaml:"server"`
-	Tls          Tls          `mapstructure:"tls" json:"tls" yaml:"tls"`
-	Mysql        Mysql        `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
-	Redis        Redis        `mapstructure:"redis" json:"redis" yaml:"redis"`
-	Header       Header       `mapstructure:"header" json:"header" yaml:"header"`
-	OpenTraceing OpenTraceing `mapstructure:"openTraceing" json:"openTraceing" yaml:"openTraceing"`
+	AppName       string        `mapstructure:"appName" json:"appName" yaml:"appName"`
+	Log           Log           `mapstructure:"log" json:"log" yaml:"log"`
+	Seckey        Seckey        `mapstructure:"seckey" json:"seckey" yaml:"seckey"`
+	CheckHeader   CheckHeader   `mapstructure:"checkHeader" json:"checkHeader" yaml:"checkHeader"`
+	Server        Server        `mapstructure:"server" json:"server" yaml:"server"`
+	Tls           Tls           `mapstructure:"tls" json:"tls" yaml:"tls"`
+	Mysql         Mysql         `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
+	Redis         Redis         `mapstructure:"redis" json:"redis" yaml:"redis"`
+	Header        Header        `mapstructure:"header" json:"header" yaml:"header"`
+	OpenTelemetry OpenTelemetry `mapstructure:"opentelemetry" json:"opentelemetry" yaml:"opentelemetry"`
 }
 
 type Tls struct {
@@ -75,7 +75,4 @@ type Header struct {
 type EnvCfg struct {
 	MyName string
 	MyId   string
-}
-
-type OpenTraceing struct {
 }

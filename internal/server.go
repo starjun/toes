@@ -10,7 +10,6 @@ import (
 	"syscall"
 	"time"
 	"toes/global"
-	"toes/global/trace"
 	"toes/internal/middleware"
 	"toes/internal/routers"
 	"toes/internal/ws"
@@ -75,7 +74,7 @@ func Run() error {
 	// 初始化 localcache 层
 	global.InitLocalCache()
 	// 初始化 opentrace
-	trace.InitTrace(ctx)
+	global.InitTrace(ctx)
 	// 初始化 redis
 	// 初始化失败自动退出
 	//global.InitRedis()
@@ -97,7 +96,7 @@ func Run() error {
 
 	// gin.Recovery() 中间件，用来捕获任何 panic，并恢复
 	mws := []gin.HandlerFunc{
-		trace.Trace,
+		global.Trace,
 		middleware.RequestID(),
 		middleware.RealIp(),
 		gin.Recovery(),

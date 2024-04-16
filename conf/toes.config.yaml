@@ -56,3 +56,14 @@ checkHeader:
 header:
   realip: x-realip-from
   requestid: x-request-id
+
+
+opentelemetry:
+  endpoint: localhost:5081
+  headers:
+    authorization: Basic cm9vdEBleGFtcGxlLmNvbTpHMWtUWVIwWHUybVpqNkQ0
+    organization: default
+    streamName: default
+  tls:
+    insecure: true
+
