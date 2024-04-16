@@ -21,6 +21,17 @@ func init() {
 	}
 }
 
+// @BasePath /api/v1/test
+
+// PingExample godoc
+// @Summary ping example
+// @Schemes
+// @Description do ping
+// @Tags example
+// @Accept json
+// @Produce json
+// @Success 200 {string} Helloworld
+// @Router /example/helloworld [get]
 func (self *testCtrl) Test(c *gin.Context) {
 	_, span := global.Tracer.Start(c.Request.Context(), "Test")
 	defer span.End()

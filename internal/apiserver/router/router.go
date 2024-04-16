@@ -8,6 +8,9 @@ import (
 	"toes/global"
 	"toes/internal/apiserver/http/controller"
 	"toes/internal/apiserver/http/middleware"
+
+	swaggerfiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func InstallRouters(g *gin.Engine) error {
@@ -51,6 +54,8 @@ func InstallRouters(g *gin.Engine) error {
 	sysV1.GET("/info", controller.SystemCtrl.SysInfo)
 	// sysV1.GET("/version", sysController.Version)
 	sysV1.GET("/ws", controller.SystemCtrl.Ws)
+
+	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler, ginSwagger.DefaultModelsExpandDepth(-1)))
 
 	SetRouters(g)
 
