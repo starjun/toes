@@ -16,6 +16,7 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+	"google.golang.org/grpc/metadata"
 )
 
 var Trace gin.HandlerFunc = func(ctx *gin.Context) {}
@@ -42,6 +43,16 @@ func InitTrace(ctx context.Context) {
 	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
 }
 
+func unaryInterceptor(ctx context.Context, method string, req, reply any, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) error {
+	md := metadata.Pairs()
+	md.Append("Authorization", "Basic cm9vdEBleGFtcGxlLmNvbTpHMWtUWVIwWHUybVpqNkQ0")
+	md.Append("organization", "default")
+	md.Append("stream-name", "default")
+	grpc.SendHeader(ctx, md)
+
+	return nil
+}
+
 func initProvider() (func(context.Context) error, error) {
 	ctx := context.Background()
 
@@ -62,17 +73,22 @@ func initProvider() (func(context.Context) error, error) {
 	// probably connect directly to the service through dns.
 	ctx, cancel := context.WithTimeout(ctx, time.Second)
 	defer cancel()
-	conn, err := grpc.NewClient("localhost",
+	conn, err := grpc.NewClient("localhost:5081",
 		// Note the use of insecure transport here. TLS is recommended in production.
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 		grpc.WithBlock(),
 	)
+
 	if err != nil {
 		return nil, fmt.Errorf("failed to create gRPC connection to collector: %w", err)
 	}
 
 	// Set up a trace exporter
-	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithGRPCConn(conn))
+	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithGRPCConn(conn), otlptracegrpc.WithHeaders(map[string]string{
+		"Authorization": "Basic cm9vdEBleGFtcGxlLmNvbTpHMWtUWVIwWHUybVpqNkQ0",
+		"organization":  "default",
+		"stream-name":   "default",
+	}))
 	if err != nil {
 		return nil, fmt.Errorf("failed to create trace exporter: %w", err)
 	}
