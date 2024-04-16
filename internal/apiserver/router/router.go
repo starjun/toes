@@ -9,6 +9,8 @@ import (
 	"toes/internal/apiserver/http/controller"
 	"toes/internal/apiserver/http/middleware"
 
+	_ "toes/api/swagger/docs"
+
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
