@@ -46,3 +46,11 @@ type ListUserExtResponse struct {
 	TotalCount int64              `json:"totalCount"`
 	List       []model.AccountExt `json:"data"`
 }
+type QueryListParamRequest struct {
+	Username string `json:"username"`
+	Tel      string `json:"tel"`
+	Email    string `json:"email"`
+	Deleted  int8   `json:"deleted"`
+	Limit    int    `json:"limit"`
+	Offset   int    `json:"offset"`
+}

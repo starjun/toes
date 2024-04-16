@@ -100,9 +100,3 @@ config.yaml
 local.*
 *.rdb
 websocket/
-
-# Tools
-.air.toml
-
-# Config
-apiserver.yaml
