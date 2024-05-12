@@ -90,13 +90,13 @@ dk.bat
 up-test.bat
 git/
 test.json
-./mss-watcher.yaml
 *.bat
-.goerctl.yaml
 .bingoctl.yaml
-config.yaml
 
 # local.*
 local.*
 *.rdb
 websocket/
+
+# Config
+apiserver.yaml
