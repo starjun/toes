@@ -5,7 +5,7 @@ import (
 	"github.com/mitchellh/mapstructure"
 	"github.com/starjun/gotools"
 	"log"
-	"toes/internal/models"
+	"toes/internal/apiserver/model"
 )
 
 var Account = new(accountService)
@@ -13,18 +13,18 @@ var Account = new(accountService)
 type accountService struct {
 }
 
-func (srv *accountService) FilterQueryFromResult(c context.Context, _reqParam *models.QueryConfigRequest) (ret []models.Account, totalCount int, err error) {
+func (srv *accountService) FilterQueryFromResult(c context.Context, _reqParam *model.QueryConfigRequest) (ret []model.Account, totalCount int, err error) {
 	reqMap := make(map[string]interface{})
 	reqMap["offset"] = 0
 	reqMap["limit"] = 500
-	resp, cnt, err := models.AccountQueryList(c, reqMap)
+	resp, cnt, err := model.AccountQueryList(c, reqMap)
 	if cnt < 1 {
 		return ret, totalCount, err
 	}
 	// 将contains转化成in
 	for k, rule := range _reqParam.Query {
-		if rule.Opt == models.ContainOpt {
-			_reqParam.Query[k].Opt = models.InOpt
+		if rule.Opt == model.ContainOpt {
+			_reqParam.Query[k].Opt = model.InOpt
 		}
 	}
 	var gotoolsRule []gotools.CRule

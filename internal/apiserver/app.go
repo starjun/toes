@@ -2,7 +2,6 @@ package apiserver
 
 import (
 	"fmt"
-
 	"github.com/spf13/cobra"
 
 	"toes/global"
@@ -20,9 +19,12 @@ func NewAppCommand() *cobra.Command {
 			defer global.LogSync()
 			// Sync 将缓存中的日志刷新到磁盘文件中
 
+			// windows
 			return Run()
 			// return internal.TestRun()
-			// return internal.Runendless()
+
+			// default run
+			//return Runendless()
 
 		},
 		// 这里设置命令运行时，不需要指定命令行参数
@@ -44,12 +46,7 @@ func NewAppCommand() *cobra.Command {
 
 	// Cobra 支持持久性标志(PersistentFlag)，该标志可用于它所分配的命令以及该命令下的每个子命令
 	cmd.PersistentFlags().StringVarP(&global.CfgFile, "config", "c", "",
-		"The path to the configuration file. Default: ./conf/apiserver.yaml")
+		"The path to the configuration file. Default: ./configs/apiserver.yaml")
 
 	return cmd
-}
-
-func main() {
-	command := NewAppCommand()
-	cobra.CheckErr(command.Execute())
 }

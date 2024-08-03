@@ -17,7 +17,6 @@ func Limit(maxEventsPerSec float64, maxBurstSize int) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		if limiter.Allow() {
 			c.Next()
-
 			return
 		}
 

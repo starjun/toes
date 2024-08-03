@@ -57,7 +57,7 @@ func initConfig(cfgpath string) {
 		viper.AddConfigPath(filepath.Join("/etc", RecommendedName))
 		viper.AddConfigPath(filepath.Join(home, "."+RecommendedName))
 		viper.AddConfigPath(".")
-		viper.AddConfigPath(filepath.Join(".", "conf"))
+		viper.AddConfigPath(filepath.Join(".", "configs"))
 
 		viper.SetConfigType("yaml")
 		viper.SetConfigName(defaultName)

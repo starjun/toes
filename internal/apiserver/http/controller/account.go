@@ -2,8 +2,8 @@ package controller
 
 import (
 	"toes/global"
-	"toes/internal/models"
-	"toes/internal/request"
+	"toes/internal/apiserver/http/request"
+	"toes/internal/apiserver/model"
 	"toes/internal/services"
 
 	"github.com/gin-gonic/gin"
@@ -219,7 +219,7 @@ func (self *accountCtrl) QueryList(c *gin.Context) {
 	}
 	reqMap := map[string]interface{}{}
 	mapstructure.Decode(r, &reqMap)
-	resp, cnt, err := models.AccountQueryList(c, reqMap)
+	resp, cnt, err := model.AccountQueryList(c, reqMap)
 	if err != nil {
 		request.WriteResponseErr(c, "1000", nil, err.Error())
 		return
@@ -228,14 +228,14 @@ func (self *accountCtrl) QueryList(c *gin.Context) {
 		TotalCount: cnt,
 		List:       resp,
 	}
-	request.WriteResponseList(c, "", *_data, models.AccountIistMeta)
+	request.WriteResponseList(c, "", *_data, model.AccountIistMeta)
 	return
 }
 
 // 从结果筛选
 func (self *accountCtrl) FilterQueryFromResult(c *gin.Context) {
 
-	var r models.QueryConfigRequest
+	var r model.QueryConfigRequest
 	if err := c.ShouldBindJSON(&r); err != nil {
 		request.WriteResponseErr(c, "1001", nil, "QueryConfigRequest error")
 		return
@@ -256,6 +256,6 @@ func (self *accountCtrl) FilterQueryFromResult(c *gin.Context) {
 		TotalCount: int64(cnt),
 		List:       resp,
 	}
-	request.WriteResponseList(c, "", *_data, models.AccountIistMeta)
+	request.WriteResponseList(c, "", *_data, model.AccountIistMeta)
 	return
 }

@@ -80,17 +80,25 @@ func (p *QueryConfigRequest) MakeGormDbByQueryConfig(gormDB *gorm.DB) {
 		gormDB.Where("deleted_at IS NULL")
 	}
 	order := p.Order
+	_tmp := "asc"
 	if len(order) == len(p.SortBy) {
 		if len(order) <= 0 {
 			gormDB.Order("id desc")
 		}
 		for i, s := range p.SortBy {
-			gormDB.Order(toSnakeCase(s) + " " + order[i])
+			if order[i] == "desc" {
+				_tmp = "desc"
+			}
+			gormDB.Order(toSnakeCase(s) + " " + _tmp)
+			//	db.Order(clause.OrderByColumn{Column: clause.Column{Name: "name"}, Desc: true})
 		}
 	}
 	if len(order) != len(p.SortBy) && len(order) == 1 {
 		for _, s := range p.SortBy {
-			gormDB.Order(toSnakeCase(s) + " " + order[0])
+			if order[0] == "desc" {
+				_tmp = "desc"
+			}
+			gormDB.Order(toSnakeCase(s) + " " + _tmp)
 		}
 	}
 }

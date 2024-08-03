@@ -3,10 +3,23 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
+	"github.com/starjun/jobrunner"
+	"time"
+	"toes/internal/job"
 	"toes/internal/utils"
 )
 
+func InitJob() {
+	jobrunner.Start() // optional: jobrunner.Start(pool int, concurrent int) (10, 1)
+	jobrunner.Schedule("@every 10s", job.Job01{Test: "xxxxx1"}, "xxxxx")
+}
+
 func main() {
+	// test jobrunner
+	InitJob()
+
+	time.Sleep(10 * time.Second)
+
 	// basekey 加密
 	bk := "x8dsafasdf98asdfjasdfi90"
 	b64bk := base64.StdEncoding.EncodeToString([]byte(bk))
