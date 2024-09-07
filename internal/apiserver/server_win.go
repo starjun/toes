@@ -3,6 +3,7 @@ package apiserver
 import (
 	"context"
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -20,8 +21,9 @@ import (
 // startInsecureServer 创建并运行 HTTP 服务器.
 func startInsecureServer(g *gin.Engine) *http.Server {
 	// 创建 HTTP Server 实例
-	// httpSrv := &http.Server{Addr: viper.GetString("server.addr"), Handler: g}
+	// httpSrv := &http.Server{Addr: viper.GetString("apiserver.addr"), Handler: g}
 	httpSrv := &http.Server{Addr: global.Cfg.Server.Addr, Handler: g}
+	fmt.Println(global.Cfg.Server.Addr)
 
 	// 运行 HTTP 服务器。在 goroutine 中启动服务器，它不会阻止下面的正常关闭处理流程
 	// 打印一条日志，用来提示 HTTP 服务已经起来，方便排障
@@ -116,7 +118,7 @@ func Run() error {
 	// kill -9 发送 syscall.SIGKILL 信号，但是不能被捕获，所以不需要添加它
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM) // 此处不会阻塞
 	<-quit                                               // 阻塞在此，当接收到上述两种信号时才会往下执行
-	log.Println("Shutting down server ...")
+	log.Println("Shutting down apiserver ...")
 
 	// 创建 ctx 用于通知服务器 goroutine, 它有 10 秒时间完成当前正在处理的请求
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)

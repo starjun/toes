@@ -18,7 +18,7 @@ COPY . .
 # was called. For example, if we call make docker-build in a local env which has the Apple Silicon M1 SO
 # the docker BUILDPLATFORM arg will be linux/arm64 when for Apple x86 it will be linux/amd64. Therefore,
 # by leaving it empty we can ensure that the container and binary shipped on it will have the same platform.
-RUN CGO_ENABLED=0 GOOS=${OS:-linux} GOARCH=${ARCH:-amd64} go build -a ./cmd/toes-apiserver
+RUN CGO_ENABLED=0 GOOS=${OS:-linux} GOARCH=${ARCH:-amd64} go build -a ./cmd/apiserver
 
 FROM alpine:latest
 
@@ -33,4 +33,4 @@ COPY --from=builder /workspace/web web
 
 EXPOSE 8080
 
-ENTRYPOINT ["/opt/toes/bin/toes-apiserver"]
+ENTRYPOINT ["/opt/toes/bin/apiserver"]

@@ -1,9 +1,9 @@
-# toes-server 全配置
+# toes-apiserver 全配置
 
 # REST-ful Server
 server:
-  mode: debug # server mode: release, debug, test，默认 release
-  addr: :9999
+  mode: debug # apiserver mode: release, debug, test，默认 release
+  addr: :8080
 
 # MySQL
 mysql:
@@ -15,7 +15,7 @@ mysql:
   maxOpenConnections: 100 # MySQL 最大打开的连接数，默认 100
   maxConnectionLifeTime: 10s # 空闲连接最大存活时间，默认 10s
   logLevel: 4 # GORM log level, 1: silent, 2:error, 3:warn, 4:info
-  passwordMode: aes # 密码加密模式，raw:明文，aes:本地加密, mist:密码托管
+  passwordMode: raw # 密码加密模式，raw:明文
 
 # Redis
 redis:
@@ -29,26 +29,25 @@ log:
   days: 7 # 日志保留天数
   format: raw # 支持的日志输出格式，目前支持 raw 和 json 两种。raw 其实就是text格式 行输出。
   console: true # 是否同步输出到命令行
-  path: ./log.log
+  path: ./logs/log.log
 
 
 # 加密之后
 seckey:
-  basekey: eDhkc2FmYXNkZjk4YXNkZmphc2RmaTkw
-  #  jwtKey: # 基于 basekey 计算
+  jwtKey: eDhkc2FmYXNkZjk4YXNkZmphc2RmaTkw #
   jwtttl: 1024 # token 过期时间(分钟)
   pproftoken : off # 配置访问 pprof 是否启用 token 检查
 
 
 # 防重放
 checkHeader:
-  all: false
-  nonce: true
-  nonceCacheSeconds: 30
-  time: true
-  seconds: 120
-  sign: true
-  # key: "" #基于 basekey 计算
+  all: false # 放重放总开关
+  nonce: true # 随机数 开关
+  nonceCacheSeconds: 30 # 单位 s
+  time: true # 时间戳 开关
+  seconds: 120 # 单位 s
+  sign: true # 签名检查开关
+  key: "" # 防重放 sign 使用
 
 
 # 请求头相关配置

@@ -28,7 +28,7 @@ type Log struct {
 }
 
 type Seckey struct {
-	Basekey    string `mapstructure:"basekey" json:"basekey" yaml:"basekey"`
+	JwtKey     string `mapstructure:"jwtKey" json:"jwtKey" yaml:"jwtKey"`
 	Jwtttl     int    `mapstructure:"jwtttl" json:"jwtttl" yaml:"jwtttl"`
 	Pproftoken string `mapstructure:"pproftoken" json:"pproftoken" yaml:"pproftoken"`
 }
@@ -40,6 +40,7 @@ type CheckHeader struct {
 	Seconds           float64 `mapstructure:"seconds" json:"seconds" yaml:"seconds"`
 	Sign              bool    `mapstructure:"sign" json:"sign" yaml:"sign"`
 	All               bool    `mapstructure:"all" json:"all" yaml:"all"`
+	Key               string  `mapstructure:"key" json:"key" yaml:"key"`
 }
 
 type Server struct {

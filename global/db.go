@@ -18,7 +18,7 @@ var (
 func InitStore() error {
 	// DecryptString
 	if strings.ToUpper(Cfg.Mysql.PasswordMode) == "AES" {
-		Cfg.Mysql.Password = utils.DecryptInternalValue(Cfg.Seckey.Basekey, Cfg.Mysql.Password, "mysql")
+		Cfg.Mysql.Password = utils.DecryptInternalValue(Cfg.Seckey.JwtKey, Cfg.Mysql.Password, "mysql")
 	}
 
 	// Get password mod

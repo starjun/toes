@@ -103,7 +103,7 @@ func InitRedis() {
 
 	RedisClient = redis.NewClient(&redis.Options{
 		Addr:     Cfg.Redis.Host,
-		Password: utils.DecryptInternalValue(Cfg.Seckey.Basekey, Cfg.Redis.Password, "redis"),
+		Password: utils.DecryptInternalValue(Cfg.Seckey.JwtKey, Cfg.Redis.Password, "redis"),
 		Username: Cfg.Redis.Username,
 	})
 

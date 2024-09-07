@@ -10,8 +10,8 @@ import (
 func NewAppCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:          "toes",
-		Short:        "A good Go api-server project",
-		Long:         `A good Go api-server project, by st.......`,
+		Short:        "A good Go api-apiserver project",
+		Long:         `A good Go api-apiserver project, by st.......`,
 		SilenceUsage: true,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// 初始化日志

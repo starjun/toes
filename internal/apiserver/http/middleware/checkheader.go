@@ -28,7 +28,7 @@ func (chr *CheckHeaderReq) NonceKey() string {
 }
 
 func (chr *CheckHeaderReq) SignKey() string {
-	md5key := utils.GetRealKey(global.Cfg.Seckey.Basekey, "CheckHeaderReq")
+	md5key := global.Cfg.CheckHeader.Key
 
 	return md5key
 }
