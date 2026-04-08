@@ -24,6 +24,35 @@ import (
 	"toes/internal/apiserver/http/middleware"
 )
 
+// InstallRouters 安装所有路由。
+//
+// 注册所有 HTTP 路由，包括 API 版本、
+// 中间件链、处理器映射等。
+//
+// 参数:
+//   - g: Gin 引擎实例
+//
+// 返回:
+//   - error: 错误信息
+//
+// 路由结构:
+//   - /healthz: 健康检查
+//   - /v1/account: 账户管理
+//   - /v1/sys: 系统管理
+//   - /v1/sys/ws: WebSocket
+//
+// 使用示例:
+//
+//	g := gin.New()
+//	err := InstallRouters(g)
+//	if err != nil {
+//	    log.Fatal(err)
+//	}
+//
+// 注意:
+//   - 必须在启动服务器前调用
+//   - 会注册所有中间件
+//   - 支持路由版本控制
 func InstallRouters(g *gin.Engine) error {
 	// Web 页面
 	g.StaticFile("/", "web/index.html")

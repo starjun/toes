@@ -28,6 +28,27 @@ import (
 
 const TableNameAccount = "user"
 
+// Account 表示用户账户模型。
+//
+// 包含用户的基本信息，如用户名、密码、联系方式等。
+// 账户状态用于控制账户的启用/禁用。
+//
+// 字段说明:
+//   - Username: 用户名，唯一标识
+//   - Password: 加密后的密码
+//   - Tel: 电话号码
+//   - Email: 电子邮箱
+//   - State: 账户状态 (1:正常，2:禁用)
+//
+// 使用示例:
+//
+//	account := &Account{
+//	    Username: "test",
+//	    Password: "hashed_password",
+//	    Email: "test@example.com",
+//	    State:  1,
+//	}
+//	err := AccountCreate(ctx, account)
 type Account struct {
 	// gorm.Model
 	Model
@@ -38,6 +59,23 @@ type Account struct {
 	State    int64  `gorm:"column:state;type:int;default:1" json:"state"`                            // 1 :正常 2 :禁用
 }
 
+// AccountExt 表示扩展账户模型。
+//
+// 在 Account 基础上扩展了角色和扩展信息字段，
+// 用于关联用户角色和额外属性。
+//
+// 字段说明:
+//   - Account: 基础账户信息
+//   - Role: 角色名称
+//   - Ext: 扩展信息（JSON 格式）
+//
+// 使用示例:
+//
+//	ext := &AccountExt{
+//	    Account: account,
+//	    Role:    "admin",
+//	    Ext:     "{}",
+//	}
 type AccountExt struct {
 	Account
 	Role string `gorm:"column:role;type:varchar(255)" json:"role"` // 角色名称
