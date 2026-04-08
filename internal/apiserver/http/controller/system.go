@@ -1,3 +1,17 @@
+// Package controller 提供 HTTP 控制器层。
+//
+// 该包处理 HTTP 请求，调用服务层业务逻辑，并返回响应。
+// 遵循 MVC 架构模式，作为请求处理的入口。
+//
+// 主要控制器:
+//   - Account: 账户管理
+//   - System: 系统管理
+//
+// 使用示例:
+//
+//	func (c *AccountController) Create(ctx *gin.Context) {
+//	    // 处理请求
+//	}
 package controller
 
 import (

@@ -1,3 +1,10 @@
+// Package global 提供 global 相关功能。
+//
+// 该包包含 global 相关的功能和工具函数。
+//
+// 使用示例:
+//
+//	global.Function()
 package global
 
 import "time"

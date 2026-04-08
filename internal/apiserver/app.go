@@ -1,3 +1,18 @@
+// Package apiserver 提供 API 服务器的核心功能。
+//
+// 该包包含服务器启动、配置初始化、命令行接口等功能。
+// 使用 Cobra 框架提供命令行界面，支持配置文件加载和日志初始化。
+//
+// 主要功能:
+//   - 命令行参数解析
+//   - 配置文件加载
+//   - 日志系统初始化
+//   - 服务器启动
+//
+// 使用示例:
+//
+//	cmd := apiserver.NewAppCommand()
+//	cobra.CheckErr(command.Execute())
 package apiserver
 
 import (

@@ -1,3 +1,18 @@
+// Package utils 提供通用工具函数。
+//
+// 该包包含各种通用工具函数，如字符串处理、
+// 加密、验证、文件操作等。
+//
+// 主要功能:
+//   - 字符串工具
+//   - 加密工具
+//   - 验证工具
+//   - 文件工具
+//
+// 使用示例:
+//
+//	hash := utils.HashPassword("password")
+//	valid := utils.ValidateEmail("test@example.com")
 package utils
 
 import (

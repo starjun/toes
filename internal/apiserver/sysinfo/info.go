@@ -1,3 +1,20 @@
+// Package sysinfo 提供系统信息采集。
+//
+// 该包采集服务器系统信息，包括 CPU、内存、
+// 磁盘、网络、主机信息等。
+//
+// 主要功能:
+//   - CPU 使用率
+//   - 内存使用率
+//   - 磁盘使用率
+//   - 网络流量
+//   - 主机信息
+//
+// 使用示例:
+//
+//	info := sysinfo.GetSysInfo()
+//	fmt.Printf("CPU: %v%%
+", info.CPU)
 package sysinfo
 
 import (

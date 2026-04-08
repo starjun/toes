@@ -1,3 +1,17 @@
+// Package router 提供路由配置。
+//
+// 该包负责注册所有 HTTP 路由，包括 API 版本、
+// 中间件链、处理器映射等。
+//
+// 主要功能:
+//   - 路由注册
+//   - 中间件绑定
+//   - 版本控制
+//
+// 使用示例:
+//
+//	g := gin.New()
+//	router.InstallRouters(g)
 package router
 
 import (

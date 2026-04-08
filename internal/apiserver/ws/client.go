@@ -2,6 +2,20 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+// Package ws 提供 WebSocket 服务。
+//
+// 该包实现 WebSocket 服务器，支持消息广播、
+// 客户端管理、连接池等功能。
+//
+// 主要组件:
+//   - Hub: 消息中心
+//   - Client: 客户端连接
+//   - Service: WebSocket 服务
+//
+// 使用示例:
+//
+//	ws.StartWS()
+//	ws.Broadcast("message")
 package ws
 
 import (

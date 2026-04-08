@@ -1,3 +1,16 @@
+// Package request 定义 HTTP 请求结构。
+//
+// 该包包含所有 HTTP 请求的参数结构体定义，
+// 用于请求参数验证和绑定。
+//
+// 主要结构:
+//   - Account 相关请求
+//   - System 相关请求
+//
+// 使用示例:
+//
+//	var req request.CreateAccountReq
+//	c.ShouldBindJSON(&req)
 package request
 
 import (

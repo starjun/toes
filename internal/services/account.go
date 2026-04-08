@@ -1,3 +1,18 @@
+// Package services 提供业务逻辑层。
+//
+// 该包封装业务逻辑，供控制器层调用。
+// 处理数据验证、业务规则、事务管理等。
+//
+// 主要服务:
+//   - Account: 账户服务
+//   - 其他业务服务
+//
+// 使用示例:
+//
+//	account, err := services.GetAccount(username)
+//	if err != nil {
+//	    return err
+//	}
 package services
 
 import (
