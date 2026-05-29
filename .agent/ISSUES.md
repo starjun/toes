@@ -2,56 +2,7 @@
 
 ## 高优先级问题
 
-### 1. MakeGormDbByQueryConfig - 操作符映射不完整
-
-**文件**: `internal/apiserver/model/model.go`
-
-**问题描述**:
-- `conditionRevMap` 缺少 `exact` 操作符映射
-- `gt`, `gte`, `lt`, `lte` 操作符在 `Rev=false` 时无法使用
-
-**代码位置**:
-```go
-func getSqlStrByRev(query *GormRule, key int) string {
-    var conditionRevMap = map[string]string{
-        // 缺少 "true_exact" 和 "false_exact"
-        // 缺少 "false_gt", "false_gte", "false_lt", "false_lte"
-    }
-}
-```
-
-**影响**:
-- `exact` 操作符无法使用（精确匹配失效）
-- `gt`, `gte`, `lt`, `lte` 操作符在 `Rev=false` 时返回空字符串
-
-**建议修复**:
-```go
-var conditionRevMap = map[string]string{
-    // 取反操作符
-    "true_in":         "NOT IN @",
-    "true_contains":   "NOT LIKE BINARY @",
-    "true_icontains":  "NOT LIKE @",
-    "true_gt":         "<= @",
-    "true_gte":        "< @",
-    "true_lt":         ">= @",
-    "true_lte":        "> @",
-    "true_exact":      "!= @",  // 添加
-    
-    // 正常操作符
-    "false_in":        "IN @",
-    "false_contains":  "LIKE BINARY @",
-    "false_icontains": "LIKE @",
-    "false_gt":        "> @",    // 添加
-    "false_gte":       ">= @",   // 添加
-    "false_lt":        "< @",    // 添加
-    "false_lte":       "<= @",   // 添加
-    "false_exact":     "= @",    // 添加
-}
-```
-
----
-
-### 2. AccountListExt - 字段名冲突风险
+### 2. MakeGormDbByQueryConfig - SQL 注入风险
 
 **文件**: `internal/apiserver/model/account.go`
 
@@ -81,7 +32,7 @@ dbObj := global.DB.Model(&Account{}).
 
 ## 中优先级问题
 
-### 3. MakeGormDbByQueryConfig - SQL 注入风险
+### 3. MakeGormDbByQueryConfig - 生产环境日志泄露
 
 **文件**: `internal/apiserver/model/model.go`
 
@@ -110,7 +61,7 @@ func isValidField(fieldName string) bool {
 
 ---
 
-### 4. MakeGormDbByQueryConfig - 生产环境日志泄露
+### 4. AccountListExt - Count 查询顺序
 
 **文件**: `internal/apiserver/model/model.go`
 
@@ -134,7 +85,7 @@ if global.Cfg.Server.Mode == "debug" {
 
 ---
 
-### 5. AccountListExt - Count 查询顺序
+### 5. Go 标准库安全漏洞
 
 **文件**: `internal/apiserver/model/account.go`
 
@@ -212,7 +163,6 @@ go1.25.10 download
 
 | 优先级 | 问题 | 影响 |
 |--------|------|------|
-| 🔴 高 | 操作符映射不完整 | 精确匹配失效、比较操作失效 |
 | 🔴 高 | Go 标准库安全漏洞 | 安全风险、DoS 攻击 |
 | 🟡 中 | AccountListExt 字段名冲突 | 数据映射错误 |
 | 🟡 中 | SQL 注入风险 | 安全风险 |
