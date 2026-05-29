@@ -148,6 +148,7 @@ func (p *QueryConfigRequest) MakeSqlByQueryConfig(tmpMap map[string]interface{})
 func getSqlStrByRev(query *GormRule, key int) string {
 	opt := strings.ToLower(strings.TrimSpace(query.Opt))
 	var conditionRevMap = map[string]string{
+		// 取反操作符 (Rev=true)
 		"true_in":         "NOT IN @",
 		"true_contains":   "NOT LIKE BINARY @",
 		"true_icontains":  "NOT LIKE @",
@@ -155,6 +156,9 @@ func getSqlStrByRev(query *GormRule, key int) string {
 		"true_gte":        "< @",
 		"true_lt":         ">= @",
 		"true_lte":        "> @",
+		"true_exact":      "!= @",
+
+		// 正常操作符 (Rev=false)
 		"false_in":        "IN @",
 		"false_contains":  "LIKE BINARY @",
 		"false_icontains": "LIKE @",
@@ -162,6 +166,7 @@ func getSqlStrByRev(query *GormRule, key int) string {
 		"false_gte":       ">= @",
 		"false_lt":        "< @",
 		"false_lte":       "<= @",
+		"false_exact":     "= @",
 	}
 	mapKey := strings.ToLower(strconv.FormatBool(query.Rev)) + "_" + opt
 	var sql string
