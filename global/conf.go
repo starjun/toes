@@ -9,8 +9,15 @@ type Config struct {
 	Server      Server      `mapstructure:"server" json:"server" yaml:"server"`
 	Tls         Tls         `mapstructure:"tls" json:"tls" yaml:"tls"`
 	Mysql       Mysql       `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
+	Sqlite      Sqlite      `mapstructure:"sqlite" json:"sqlite" yaml:"sqlite"`
 	Redis       Redis       `mapstructure:"redis" json:"redis" yaml:"redis"`
 	Header      Header      `mapstructure:"header" json:"header" yaml:"header"`
+}
+
+type Sqlite struct {
+	Enabled bool   `mapstructure:"enabled" json:"enabled" yaml:"enabled"`
+	Path    string `mapstructure:"path" json:"path" yaml:"path"`
+	LogLevel int   `mapstructure:"logLevel" json:"logLevel" yaml:"logLevel"`
 }
 
 type Tls struct {

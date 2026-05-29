@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"gorm.io/driver/mysql"
+	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	mysqllogger "gorm.io/gorm/logger"
 	"strings"
@@ -16,28 +17,34 @@ var (
 
 // InitStore 读取 db 配置，创建 gorm.DB 实例，并初始化 store 层.
 func InitStore() error {
+	var err error
+	
+	// 优先使用 SQLite（本地开发模式）
+	if Cfg.Sqlite.Enabled {
+		LogInfow("使用 SQLite 数据库", "path", Cfg.Sqlite.Path)
+		DB, err = newSqlite(&Cfg.Sqlite)
+		if err != nil {
+			LogErrorw("sqlite连接失败", "Subject", "sqlite", "Result", err)
+			cobra.CheckErr(err)
+		}
+		LogDebugw("init sqlite db success")
+		return nil
+	}
+
+	// 使用 MySQL（生产环境）
 	// DecryptString
 	if strings.ToUpper(Cfg.Mysql.PasswordMode) == "AES" {
 		Cfg.Mysql.Password = utils.DecryptInternalValue(Cfg.Seckey.JwtKey, Cfg.Mysql.Password, "mysql")
 	}
 
-	// Get password mod
-	//if config.Cfg.Mysql.PasswordMode == db.PasswordModeMist {
-	//	var _err error
-	//	config.Cfg.Mysql.Password, _err = GetSecretByMist()
-	//	if _err != nil {
-	//		return _err
-	//	}
-	//}
-
-	var err error
+	LogInfow("使用 MySQL 数据库", "host", Cfg.Mysql.Host, "database", Cfg.Mysql.Database)
 	DB, err = newMySQL(&Cfg.Mysql)
 	if err != nil {
 		LogErrorw("mysql连接失败", "Subject", "mysql", "Result", err)
 		cobra.CheckErr(err)
 	}
 
-	LogDebugw("init db success")
+	LogDebugw("init mysql db success")
 	return nil
 }
 
@@ -61,8 +68,6 @@ func newMySQL(opts *Mysql) (*gorm.DB, error) {
 	}
 	db, err := gorm.Open(mysql.Open(opts.DSN()), &gorm.Config{
 		Logger: mysqllogger.Default.LogMode(logLevel),
-		//SkipDefaultTransaction: true,
-		//PrepareStmt:            true,
 	})
 	if err != nil {
 		return nil, err
@@ -81,6 +86,22 @@ func newMySQL(opts *Mysql) (*gorm.DB, error) {
 
 	// SetMaxIdleConns sets the maximum number of connections in the idle connection pool.
 	sqlDB.SetMaxIdleConns(opts.MaxIdleConnections)
+
+	return db, nil
+}
+
+// newSqlite create a new gorm db instance with sqlite.
+func newSqlite(opts *Sqlite) (*gorm.DB, error) {
+	logLevel := mysqllogger.Silent
+	if opts.LogLevel != 0 {
+		logLevel = mysqllogger.LogLevel(opts.LogLevel)
+	}
+	db, err := gorm.Open(sqlite.Open(opts.Path), &gorm.Config{
+		Logger: mysqllogger.Default.LogMode(logLevel),
+	})
+	if err != nil {
+		return nil, err
+	}
 
 	return db, nil
 }

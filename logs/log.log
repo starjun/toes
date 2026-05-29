@@ -40,3 +40,39 @@
 {"level":"[INFO]","ts":"2024-09-07T19:42:08.000+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
 {"level":"[INFO]","ts":"2024-09-07T19:42:09.326+0800","caller_line":"[apiserver/server_win.go:121]","msg":"Shutting down apiserver ..."}
 {"level":"[INFO]","ts":"2024-09-07T19:42:09.326+0800","caller_line":"[apiserver/server_win.go:141]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2026-05-29T23:22:33.888+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":8080"}
+{"level":"[INFO]","ts":"2026-05-29T23:22:43.002+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:22:49.813+0800","caller_line":"[middleware/logger.go:20]","msg":"GIN","WEB":"GIN","Traceid":"8ec74de5-cea3-45a4-92e1-3e6a952ae82b","status":200,"method":"GET","path":"/healthz","query":"","ip":"127.0.0.1","cost":0.000050167,"errors":""}
+{"level":"[INFO]","ts":"2026-05-29T23:22:53.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:23:03.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:23:13.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:23:23.008+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:23:33.008+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:23:43.002+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:23:53.003+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:24:02.385+0800","caller_line":"[middleware/logger.go:20]","msg":"GIN","WEB":"GIN","Traceid":"5aa6335e-2dac-4dc1-80d1-69d3e27de302","status":200,"method":"GET","path":"/healthz","query":"","ip":"127.0.0.1","cost":0.00024225,"errors":""}
+{"level":"[INFO]","ts":"2026-05-29T23:24:03.002+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:24:13.002+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:24:23.002+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:24:31.867+0800","caller_line":"[apiserver/server_win.go:121]","msg":"Shutting down apiserver ..."}
+{"level":"[INFO]","ts":"2026-05-29T23:24:31.868+0800","caller_line":"[apiserver/server_win.go:141]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2026-05-29T23:24:53.809+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":8080"}
+{"level":"[INFO]","ts":"2026-05-29T23:25:03.002+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:25:13.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:25:23.002+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:25:29.674+0800","caller_line":"[apiserver/server_win.go:121]","msg":"Shutting down apiserver ..."}
+{"level":"[INFO]","ts":"2026-05-29T23:25:29.677+0800","caller_line":"[apiserver/server_win.go:141]","msg":"Server exiting"}
+{"level":"[INFO]","ts":"2026-05-29T23:27:07.908+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":8080"}
+{"level":"[INFO]","ts":"2026-05-29T23:27:17.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:27:27.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:27:37.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:27:47.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:27:57.001+0800","caller_line":"[job/jobdemo.go:10]","msg":"Hello,  xxxxx1"}
+{"level":"[INFO]","ts":"2026-05-29T23:28:01.823+0800","caller_line":"[apiserver/server_win.go:121]","msg":"Shutting down apiserver ..."}
+{"level":"[INFO]","ts":"2026-05-29T23:30:48.738+0800","caller_line":"[global/log.go:128]","msg":"使用 SQLite 数据库","path":"./data/toes.db"}
+{"level":"[ERROR]","ts":"2026-05-29T23:30:48.746+0800","caller_line":"[global/log.go:140]","msg":"sqlite连接失败","Subject":"sqlite","Result":"unable to open database file: no such file or directory"}
+{"level":"[INFO]","ts":"2026-05-29T23:30:51.341+0800","caller_line":"[global/log.go:128]","msg":"使用 SQLite 数据库","path":"./data/toes.db"}
+{"level":"[DEBUG]","ts":"2026-05-29T23:30:51.363+0800","caller_line":"[global/log.go:122]","msg":"init sqlite db success"}
+{"level":"[INFO]","ts":"2026-05-29T23:30:51.365+0800","caller_line":"[global/log.go:128]","msg":"Start to listening the incoming requests on http address","addr":":8080"}
+{"level":"[INFO]","ts":"2026-05-29T23:30:59.180+0800","caller_line":"[apiserver/server_win.go:121]","msg":"Shutting down apiserver ..."}
+{"level":"[INFO]","ts":"2026-05-29T23:30:59.183+0800","caller_line":"[apiserver/server_win.go:141]","msg":"Server exiting"}

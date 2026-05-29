@@ -74,7 +74,7 @@ func Run() error {
 	// global.InitRedis()
 
 	// 初始化数据库
-	// global.InitStore()
+	global.InitStore()
 
 	// 初始化 jobrunner
 	InitJob()

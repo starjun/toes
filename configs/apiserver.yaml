@@ -5,7 +5,13 @@ server:
   mode: debug # apiserver mode: release, debug, test，默认 release
   addr: :8080
 
-# MySQL
+# SQLite (本地开发模式)
+sqlite:
+  enabled: true  # 是否启用 SQLite，启用后优先使用 SQLite
+  path: ./data/toes.db  # SQLite 数据库文件路径
+  logLevel: 4  # GORM log level, 1: silent, 2:error, 3:warn, 4:info
+
+# MySQL (生产环境)
 mysql:
   host: rm-uf65u18gj63n1eqplko.mysql.rds.aliyuncs.com # MySQL 机器 ip 和端口，默认 127.0.0.1:3306
   username: root # MySQL 用户名(建议授权最小权限集)
