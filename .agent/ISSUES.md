@@ -2,54 +2,7 @@
 
 ## 高优先级问题
 
-### 1. FilterQueryFromResult 方法 - 内存过滤 vs SQL 过滤
-
-**文件**: `internal/services/account.go`
-
-**问题描述**:
-- 方法名暗示 SQL 过滤，实际是内存过滤
-- 只查询前 500 条数据，可能遗漏符合条件的数据
-- `contains` 操作符被错误转换为 `in`
-
-**代码位置**:
-```go
-func (srv *accountService) FilterQueryFromResult(c context.Context, _reqParam *model.QueryConfigRequest) (ret []model.Account, totalCount int, err error) {
-    // 只查询 500 条
-    reqMap["limit"] = 500
-    resp, cnt, err := model.AccountQueryList(c, reqMap)
-    
-    // 错误转换
-    for k, rule := range _reqParam.Query {
-        if rule.Opt == model.ContainOpt {
-            _reqParam.Query[k].Opt = model.InOpt  // ❌ contains ≠ in
-        }
-    }
-}
-```
-
-**影响**:
-- 如果数据库有 10000 条数据，只会查询前 500 条
-- 如果符合条件的数据在第 501-10000 条之间，将永远无法查询到
-- `contains` 操作符失效
-
-**建议修复**:
-```go
-// 直接使用 GORM 的 MakeGormDbByQueryConfig 进行 SQL 过滤
-dbObj := global.DB
-_reqParam.MakeGormDbByQueryConfig(dbObj)
-err = dbObj.
-    Offset(_reqParam.Offset).
-    Limit(defaultLimit(_reqParam.Limit)).
-    Find(&ret).
-    Offset(-1).
-    Limit(-1).
-    Count(&totalCount).
-    Error
-```
-
----
-
-### 2. MakeGormDbByQueryConfig - 操作符映射不完整
+### 1. MakeGormDbByQueryConfig - 操作符映射不完整
 
 **文件**: `internal/apiserver/model/model.go`
 
@@ -98,7 +51,7 @@ var conditionRevMap = map[string]string{
 
 ---
 
-### 3. AccountListExt - 字段名冲突风险
+### 2. AccountListExt - 字段名冲突风险
 
 **文件**: `internal/apiserver/model/account.go`
 
@@ -128,7 +81,7 @@ dbObj := global.DB.Model(&Account{}).
 
 ## 中优先级问题
 
-### 4. MakeGormDbByQueryConfig - SQL 注入风险
+### 3. MakeGormDbByQueryConfig - SQL 注入风险
 
 **文件**: `internal/apiserver/model/model.go`
 
@@ -157,7 +110,7 @@ func isValidField(fieldName string) bool {
 
 ---
 
-### 5. MakeGormDbByQueryConfig - 生产环境日志泄露
+### 4. MakeGormDbByQueryConfig - 生产环境日志泄露
 
 **文件**: `internal/apiserver/model/model.go`
 
@@ -181,7 +134,7 @@ if global.Cfg.Server.Mode == "debug" {
 
 ---
 
-### 6. AccountListExt - Count 查询顺序
+### 5. AccountListExt - Count 查询顺序
 
 **文件**: `internal/apiserver/model/account.go`
 
@@ -218,57 +171,9 @@ err = dbObj.
 
 ---
 
-## 低优先级问题
-
-### 7. FilterQueryFromResult - 数据结构不匹配
-
-**文件**: `internal/services/account.go`
-
-**问题描述**:
-- `GormRule.ReStrList` 是 `[]interface{}`
-- `gotools.CRule.ReStrList` 是 `[]string`
-- `mapstructure.Decode` 可能转换失败
-
-**建议修复**:
-```go
-func convertToStringSlice(src []interface{}) []string {
-    result := make([]string, len(src))
-    for i, v := range src {
-        if str, ok := v.(string); ok {
-            result[i] = str
-        }
-    }
-    return result
-}
-```
-
----
-
-### 8. FilterQueryFromResult - 分页逻辑错误
-
-**文件**: `internal/services/account.go`
-
-**问题描述**:
-- 第 47 行的 `totalCount++` 累加被第 57 行的 `totalCount = len(ret)` 覆盖
-
-**代码位置**:
-```go
-totalCount++  // 累加
-// ...
-totalCount = len(ret)  // 覆盖
-```
-
-**建议修复**:
-```go
-// 移除累加逻辑，直接使用 len(ret)
-totalCount = len(ret)
-```
-
----
-
 ## 依赖漏洞问题
 
-### 9. Go 标准库安全漏洞
+### 6. Go 标准库安全漏洞
 
 **检测工具**: `govulncheck`
 
@@ -307,12 +212,9 @@ go1.25.10 download
 
 | 优先级 | 问题 | 影响 |
 |--------|------|------|
-| 🔴 高 | FilterQueryFromResult 内存过滤 | 数据遗漏、功能失效 |
 | 🔴 高 | 操作符映射不完整 | 精确匹配失效、比较操作失效 |
 | 🔴 高 | Go 标准库安全漏洞 | 安全风险、DoS 攻击 |
 | 🟡 中 | AccountListExt 字段名冲突 | 数据映射错误 |
 | 🟡 中 | SQL 注入风险 | 安全风险 |
 | 🟡 中 | 生产环境日志泄露 | 信息泄露 |
 | 🟡 中 | Count 查询顺序 | 数据不准确 |
-| 🟢 低 | 数据结构不匹配 | 转换失败 |
-| 🟢 低 | 分页逻辑错误 | 数据不准确 |
