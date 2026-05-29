@@ -100,3 +100,6 @@ websocket/
 
 # Config
 apiserver.yaml
+
+# SQLite 数据库文件
+data/*.db
